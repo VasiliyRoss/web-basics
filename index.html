@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,124 +9,137 @@
   <link rel="stylesheet" href="./css/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="top-block">
-    <div class="page__menu top-block__page-menu">
-      <img src="./images/logo/Escape_white.svg" alt="Escape">
-      <nav class="navigation top-block__navigation">
+  <div class="page">
+    <header class="top-block">
+      <div class="page__menu top-block__page-menu">
+        <img src="./images/logo/Escape_white.svg" alt="Escape">
+        <nav class="navigation top-block__navigation">
+          <a href="#" class="navigation__link">Home</a>
+          <a href="#" class="navigation__link">Categories</a>
+          <a href="#" class="navigation__link">About</a>
+          <a href="#" class="navigation__link">Contact</a>
+        </nav>
+      </div>
+      <h1 class="top-block__header">Let's do it together.</h1>
+      <p class="top-block__text">
+        We travel the world in search of stories. Come along for the ride.
+      </p>
+      <button class="button top-block__button">View Latest Posts</button>
+    </header>
+    <nav class="page-navigation">
+      <a href="#" class="page-navigation__link">Nature</a>
+      <a href="#" class="page-navigation__link">Photography</a>
+      <a href="#" class="page-navigation__link">Relaxation</a>
+      <a href="#" class="page-navigation__link">Vacation</a>
+      <a href="#" class="page-navigation__link">Travel</a>
+      <a href="#" class="page-navigation__link">Adventure</a>
+    </nav>
+    <section class="section">
+      <div class="section__header">
+        <h2 class="section__header-text">Featured Posts</h2>
+      </div>
+      <div class="main-section__card main-section__card_first">
+        <h3 class="card__header">The Road Ahead</h3>
+        <p class="card__text">The road ahead might be paved - it might not be.</p>
+        <div class="card__signature">
+          <div class="card__author">
+            <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
+            <span class="card__author-name">Mat Vogels</span>
+          </div>
+          <span class="card__date">September 25, 2015</span>
+        </div>
+      </div>
+      <div class="main-section__card main-section__card_second">
+        <span class="card__label">Adventure</span>
+        <h3 class="card__header">From Top Down</h3>
+        <p class="card__text">Once a year, go someplace you’ve never been before.</p>
+        <div class="card__signature">
+          <div class="card__author">
+            <img src="./images/avatars/william_wong.png" alt="William Wong">
+            <span class="card__author-name">William Wong</span>
+          </div>
+          <span class="card__date">September 25, 2015</span>
+        </div>
+      </div>
+    </section>
+    <section class="section section_alt">
+      <div class="section__header">
+        <h2 class="section__header-text">Most Recent</h2>
+      </div>
+      <div class="alt-section__card">
+        <img src="./images/cards/still_standing_tall.jpg" alt="Still Standing Tall">
+        <h3 class="card__header-text card__header-text_alt">Still Standing Tall</h3>
+        <p class="card__text card__text_alt">Life begins at the end of your comfort zone.</p>
+        <div class="card__signature card__signature_alt">
+          <img src="./images/avatars/william_wong.png" alt="William Wong">
+          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <span class="card__date card__date_alt">9/25/2015</span>
+        </div>
+      </div>
+      <div class="alt-section__card">
+        <img src="./images/cards/sunny_side_up.png" alt="Sunny Side Up">
+        <h3 class="card__header-text card__header-text_alt">Sunny Side Up</h3>
+        <p class="card__text card__text_alt">No place is ever as bad as they tell you it’s going to be.</p>
+        <div class="card__signature card__signature_alt">
+          <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
+          <span class="card__author-name card__author-name_alt">Mat Vogels</span>
+          <span class="card__date card__date_alt">9/25/2015</span>
+        </div>
+      </div>
+      <div class="alt-section__card">
+        <img src="./images/cards/water_falls.png" alt="Water Falls">
+        <h3 class="card__header-text card__header-text_alt">Water Falls</h3>
+        <p class="card__text card__text_alt">We travel not to escape life, but for life not to escape us.</p>
+        <div class="card__signature card__signature_alt">
+          <img src="./images/avatars/william_wong.png" alt="William Wong">
+          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <span class="card__date card__date_alt">9/25/2015</span>
+        </div>
+      </div>
+      <div class="alt-section__card">
+        <img src="./images/cards/through_the_mist.png" alt="Through the Mist">
+        <h3 class="card__header-text card__header-text_alt">Through the Mist</h3>
+        <p class="card__text card__text_alt">Travel makes you see what a tiny place you occupy in the world.</p>
+        <div class="card__signature card__signature_alt">
+          <img src="./images/avatars/william_wong.png" alt="William Wong">
+          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <span class="card__date card__date_alt">9/25/2015</span>
+        </div>
+      </div>
+      <div class="alt-section__card">
+        <img src="./images/cards/awaken_early.png" alt="Awaken Early">
+        <h3 class="card__header-text card__header-text_alt">Awaken Early</h3>
+        <p class="card__text card__text_alt">Not all those who wander are lost.</p>
+        <div class="card__signature card__signature_alt">
+          <img src="./images/avatars/william_wong.png" alt="William Wong">
+          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <span class="card__date card__date_alt">9/25/2015</span>
+        </div>
+      </div>
+      <div class="alt-section__card">
+        <img src="./images/cards/try_it_always.png" alt="Try it Always">
+        <h3 class="card__header-text card__header-text_alt">Try it Always</h3>
+        <p class="card__text card__text_alt">The world is a book, and those who do not travel read only one
+          page.</p>
+        <div class="card__signature card__signature_alt">
+          <img src="./images/avatars/william_wong.png" alt="William Wong">
+          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <span class="card__date card__date_alt">9/25/2015</span>
+        </div>
+      </div>
+    </section>
+    <footer class="page__menu">
+      <img src="./images/logo/Escape_black.svg" alt="Escape">
+      <nav class="navigation footer__navigation">
         <a href="#" class="navigation__link">Home</a>
         <a href="#" class="navigation__link">Categories</a>
         <a href="#" class="navigation__link">About</a>
         <a href="#" class="navigation__link">Contact</a>
       </nav>
-    </div>
-    <h1 class="top-block__header">Let's do it together.</h1>
-    <p class="top-block__text">
-      We travel the world in search of stories. Come along for the ride.
-    </p>
-    <button class="button top-block__button">View Latest Posts</button>
-  </header>
-  <nav class="page-navigation">
-    <a href="#" class="page-navigation__link">Nature</a>
-    <a href="#" class="page-navigation__link">Photography</a>
-    <a href="#" class="page-navigation__link">Relaxation</a>
-    <a href="#" class="page-navigation__link">Vacation</a>
-    <a href="#" class="page-navigation__link">Travel</a>
-    <a href="#" class="page-navigation__link">Adventure</a>
-  </nav>
-  <section class="main-section"> 
-    <h2 class="main-section__header">Featured Posts</h2>
-    <div class="main-section__card main-section__card_first">
-      <h3 class="card__header">The Road Ahead</h3>
-      <p class="card__text">The road ahead might be paved - it might not be.</p>
-      <div>
-        <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
-        <span>Mat Vogels</span>
-      </div>
-      <span>September 25, 2015</span>
-    </div>
-    <div class="main-section__card main-section__card_second">
-      <span>Adventure</span>
-      <h3 class="card__header">From Top Down</h3>
-      <p class="card__text">Once a year, go someplace you’ve never been before.</p>
-      <div>
-        <img src="./images/avatars/william_wong.png" alt="William Wong">
-        <span>William Wong</span>
-      </div>
-      <span>September 25, 2015</span>
-    </div>
-  </section>
-  <section class="alt-section">
-    <h2 class="alt-section__header">Most Recent</h2>
-    <div>
-      <img src="./images/cards/still_standing_tall.jpg" alt="Still Standing Tall">
-      <h3>Still Standing Tall</h3>
-      <p>Life begins at the end of your comfort zone.</p>
-      <div>
-        <img src="./images/avatars/william_wong.png" alt="William Wong">
-        <span>William Wong</span>
-        <span>9/25/2015</span>
-      </div>
-    </div>
-    <div>
-      <img src="./images/cards/sunny_side_up.png" alt="Sunny Side Up">
-      <h3>Sunny Side Up</h3>
-      <p>No place is ever as bad as they tell you it’s going to be.</p>
-      <div>
-        <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
-        <span>Mat Vogels</span>
-        <span>9/25/2015</span>
-      </div>
-    </div>
-    <div>
-      <img src="./images/cards/water_falls.png" alt="Water Falls">
-      <h3>Water Falls</h3>
-      <p>We travel not to escape life, but for life not to escape us.</p>
-      <div>
-        <img src="./images/avatars/william_wong.png" alt="William Wong">
-        <span>William Wong</span>
-        <span>9/25/2015</span>
-      </div>
-    </div>
-    <div>
-      <img src="./images/cards/through_the_mist.png" alt="Through the Mist">
-      <h3>Through the Mist</h3>
-      <p>Travel makes you see what a tiny place you occupy in the world.</p>
-      <div>
-        <img src="./images/avatars/william_wong.png" alt="William Wong">
-        <span>William Wong</span>
-        <span>9/25/2015</span>
-      </div>
-    </div>
-    <div>
-      <img src="./images/cards/awaken_early.png" alt="Awaken Early">
-      <h3>Awaken Early</h3>
-      <p>Not all those who wander are lost.</p>
-      <div>
-        <img src="./images/avatars/william_wong.png" alt="William Wong">
-        <span>William Wong</span>
-        <span>9/25/2015</span>
-      </div>
-    </div>
-    <div>
-      <img src="./images/cards/try_it_always.png" alt="Try it Always">
-      <h3>Try it Always</h3>
-      <p>The world is a book, and those who do not travel read only one page.</p>
-      <div>
-        <img src="./images/avatars/william_wong.png" alt="William Wong">
-        <span>William Wong</span>
-        <span>9/25/2015</span>
-      </div>
-    </div>
-  </section>
-  <footer class="page__menu">
-    <img src="./images/logo/Escape_black.svg" alt="Escape">
-    <nav class="navigation footer__navigation">
-      <a href="#" class="navigation__link">Home</a>
-      <a href="#" class="navigation__link">Categories</a>
-      <a href="#" class="navigation__link">About</a>
-      <a href="#" class="navigation__link">Contact</a>
-    </nav>
-</footer>
+    </footer>
+  </div>
 </body>
+
 </html>

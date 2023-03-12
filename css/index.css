@@ -4,20 +4,29 @@
     margin: 0;
 }
 
+.page
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #F7F7F7;
+}
+
 .top-block
 {
-    display: grid;
     background: #000 url(../images/backgrounds/top_block_background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
     padding: 20px 270px 160px 250px;
 }
 
 .page__menu
 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: baseline;
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .top-block__page-menu
@@ -35,13 +44,15 @@
 .top-block__navigation
 {
     letter-spacing: 0.6px;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
 }
 
 .navigation__link
 {
     text-decoration: none;
     color: #FFF;
-    margin-left: 40px;
 }
 
 .top-block__header
@@ -49,7 +60,7 @@
     font: 50px/1.02 'Lora', serif;
     letter-spacing: 2px;
     color: #FFF;
-    justify-self: center;
+    align-self: center;
     margin: 0 0 20px 0;
 }
 
@@ -57,7 +68,7 @@
 {
     font: 17px/1.18 'Oxygen', sans-serif;
     color: rgba(255, 255, 255, 0.63);
-    justify-self: center;
+    align-self: center;
     margin: 0 0 31px 0;
 }
 
@@ -74,14 +85,15 @@
     background: #DD783F;
     color: #fff;
     font: 13px/1.54 'Oxygen', sans-serif;
-    justify-self: center;
+    align-self: center;
 }
 
 .page-navigation
 {
-    margin: 22px 296px 23px 286px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 22px 296px 23px 286px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFF;
 }
 
 .page-navigation__link
@@ -91,35 +103,33 @@
     text-decoration: none;
 }
 
-.main-section
+.section
 {
-    padding: 60px 250px 108px;
-    background: #F7F7F7;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    padding: 60px 0 7px;
+    width: 940px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: center;
 }
 
-.main-section__header-container
-{
-    margin: 0 0 40px 0;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    justify-self: center;
-}
-
-.main-section__header, .alt-section__header
+.section__header
 {  
-    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 0 0 40px 0;
+    justify-content: center;
+}
+
+.section__header-text
+{
     font: 20px/1.35 'Oxygen', sans-serif;
     letter-spacing: 2px;
     color: #2E2E2E;
-    justify-self: center;
-    margin: 0 0 40px 0;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    position: relative;
 }
 
-.main-section__header::before, .alt-section__header::before
+.section__header-text::before
 {
     position: absolute;
     content: url(../images/decorations/header_underline.svg);
@@ -129,8 +139,35 @@
 
 .main-section__card
 {
-    height: 280px;
-    width: 460px;
+    height: 245px;
+    width: 420px;
+    position: relative;
+}
+
+.card__label
+{
+    position: absolute;
+    background-color: #DD783F;
+    font: 13px/1.08 'Oxygen', sans-serif;
+    color: #FFF;
+    text-transform: uppercase;
+    top: 20px;
+    left: 20px;
+    border-radius: 2px;
+    display: flex;
+    align-items :center;
+    justify-content: center;
+    width: 87px;
+    height: 26px;
+}
+
+.main-section__card
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border-radius: 3px;
+    padding: 0 20px 20px 20px;
 }
 
 .main-section__card_first
@@ -153,4 +190,63 @@
 {
     font: 14px/1.79 'Oxygen', sans-serif;
     color: rgba(255, 255, 255, 0.7);
+    padding: 0 0 15px;
+}
+
+.card__signature
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__author
+{
+    display: flex;
+    align-items: center;
+}
+
+.card__author-name, .card__date
+{
+    font: 12px/2.92 'Oxygen', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 10px;
+
+}
+
+.section_alt
+{
+    justify-content: space-around;
+}
+
+.card__header-text_alt
+{
+    color: #101315;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.card__text_alt
+{
+    font-size: 13px;
+    line-height: 19px;
+    color: #7A7A7A;
+}
+
+.card__author-name_alt
+{
+    color: #999999;
+}
+
+.card__date_alt
+{
+    color: #999999;
+}
+
+.alt-section__card
+{
+    width: 296px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.09);
+    border-radius: 3px;
 }
