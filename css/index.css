@@ -6,15 +6,30 @@
 
 .top-block
 {
+    display: grid;
     background: #000 url(../images/backgrounds/top_block_background.jpg);
     background-repeat: no-repeat;
-    height: 500px;
+    background-size: cover;
+    padding: 20px 270px 160px 250px;
+}
+
+.page__menu
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: baseline;
+}
+
+.top-block__page-menu
+{
+    margin: 0 0 131px 0;
 }
 
 .navigation
 {
     font: 12px/1.67 'Oxygen', sans-serif;
     text-transform: uppercase;
+    justify-self: end;
 }
 
 .top-block__navigation
@@ -26,6 +41,7 @@
 {
     text-decoration: none;
     color: #FFF;
+    margin-left: 40px;
 }
 
 .top-block__header
@@ -33,12 +49,16 @@
     font: 50px/1.02 'Lora', serif;
     letter-spacing: 2px;
     color: #FFF;
+    justify-self: center;
+    margin: 0 0 20px 0;
 }
 
 .top-block__text
 {
     font: 17px/1.18 'Oxygen', sans-serif;
     color: rgba(255, 255, 255, 0.63);
+    justify-self: center;
+    margin: 0 0 31px 0;
 }
 
 .button
@@ -54,6 +74,7 @@
     background: #DD783F;
     color: #fff;
     font: 13px/1.54 'Oxygen', sans-serif;
+    justify-self: center;
 }
 
 .page-navigation
@@ -74,12 +95,62 @@
 {
     padding: 60px 250px 108px;
     background: #F7F7F7;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.main-section__header
+.main-section__header-container
 {
+    margin: 0 0 40px 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+}
+
+.main-section__header, .alt-section__header
+{  
+    position: relative;
     font: 20px/1.35 'Oxygen', sans-serif;
     letter-spacing: 2px;
     color: #2E2E2E;
-    text-align: center;
+    justify-self: center;
+    margin: 0 0 40px 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.main-section__header::before, .alt-section__header::before
+{
+    position: absolute;
+    content: url(../images/decorations/header_underline.svg);
+    bottom: -10px;
+    left: -15px;
+}
+
+.main-section__card
+{
+    height: 280px;
+    width: 460px;
+}
+
+.main-section__card_first
+{
+    background-image: url(../images/cards/the_road_ahead.png);
+}
+
+.main-section__card_second
+{
+    background-image: url(../images/cards/from_top_down.png);
+}
+
+.card__header
+{
+    font: 27px/1.11 'Lora', serif;
+    color: #FFF;
+}
+
+.card__text
+{
+    font: 14px/1.79 'Oxygen', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
 }

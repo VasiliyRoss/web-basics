@@ -10,7 +10,7 @@
 </head>
 <body>
   <header class="top-block">
-    <div>
+    <div class="page__menu top-block__page-menu">
       <img src="./images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation top-block__navigation">
         <a href="#" class="navigation__link">Home</a>
@@ -35,26 +35,24 @@
   </nav>
   <section class="main-section"> 
     <h2 class="main-section__header">Featured Posts</h2>
-      <div class="main-section__card">
-        <h3 class="card__header">The Road Ahead</h3>
-        <img src="images/cards/the_road_ahead.png" alt="northern lights">
-        <p class="card__text">The road ahead might be paved - it might not be.</p>
-        <div>
-          <img src="./images/avatars/mat_vogels.jpg" alt="Mat Vogels">
-          <span>Mat Vogels</span>
-        </div>
-        <span>September 25, 2015</span>
+    <div class="main-section__card main-section__card_first">
+      <h3 class="card__header">The Road Ahead</h3>
+      <p class="card__text">The road ahead might be paved - it might not be.</p>
+      <div>
+        <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
+        <span>Mat Vogels</span>
       </div>
-      <div class="main-section__card">
-        <span>Adventure</span>
-        <h3 class="card__header">From Top Down</h3>
-        <img src="./images/cards/from_top_down.png" alt="paper baloon">
-        <p class="card__text">Once a year, go someplace you’ve never been before.</p>
-        <div>
-          <img src="./images/avatars/william_wong.jpg" alt="William Wong">
-          <span>William Wong</span>
-        </div>
-        <span>September 25, 2015</span>
+      <span>September 25, 2015</span>
+    </div>
+    <div class="main-section__card main-section__card_second">
+      <span>Adventure</span>
+      <h3 class="card__header">From Top Down</h3>
+      <p class="card__text">Once a year, go someplace you’ve never been before.</p>
+      <div>
+        <img src="./images/avatars/william_wong.png" alt="William Wong">
+        <span>William Wong</span>
+      </div>
+      <span>September 25, 2015</span>
     </div>
   </section>
   <section class="alt-section">
@@ -64,7 +62,7 @@
       <h3>Still Standing Tall</h3>
       <p>Life begins at the end of your comfort zone.</p>
       <div>
-        <img src="./images/avatars/william_wong.jpg" alt="William Wong">
+        <img src="./images/avatars/william_wong.png" alt="William Wong">
         <span>William Wong</span>
         <span>9/25/2015</span>
       </div>
@@ -74,7 +72,7 @@
       <h3>Sunny Side Up</h3>
       <p>No place is ever as bad as they tell you it’s going to be.</p>
       <div>
-        <img src="./images/avatars/mat_vogels.jpg" alt="Mat Vogels">
+        <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
         <span>Mat Vogels</span>
         <span>9/25/2015</span>
       </div>
@@ -84,7 +82,7 @@
       <h3>Water Falls</h3>
       <p>We travel not to escape life, but for life not to escape us.</p>
       <div>
-        <img src="./images/avatars/william_wong.jpg" alt="William Wong">
+        <img src="./images/avatars/william_wong.png" alt="William Wong">
         <span>William Wong</span>
         <span>9/25/2015</span>
       </div>
@@ -94,7 +92,7 @@
       <h3>Through the Mist</h3>
       <p>Travel makes you see what a tiny place you occupy in the world.</p>
       <div>
-        <img src="./images/avatars/william_wong.jpg" alt="William Wong">
+        <img src="./images/avatars/william_wong.png" alt="William Wong">
         <span>William Wong</span>
         <span>9/25/2015</span>
       </div>
@@ -104,7 +102,7 @@
       <h3>Awaken Early</h3>
       <p>Not all those who wander are lost.</p>
       <div>
-        <img src="./images/avatars/william_wong.jpg" alt="William Wong">
+        <img src="./images/avatars/william_wong.png" alt="William Wong">
         <span>William Wong</span>
         <span>9/25/2015</span>
       </div>
@@ -114,20 +112,20 @@
       <h3>Try it Always</h3>
       <p>The world is a book, and those who do not travel read only one page.</p>
       <div>
-        <img src="./images/avatars/william_wong.jpg" alt="William Wong">
+        <img src="./images/avatars/william_wong.png" alt="William Wong">
         <span>William Wong</span>
         <span>9/25/2015</span>
       </div>
     </div>
   </section>
-  <footer>
-    <img src="./images/logo/Escape_white.svg" alt="Escape">
-    <nav class="navigation">
-        <a href="#">Home</a>
-        <a href="#">Categories</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </nav>
-  </footer>
+  <footer class="page__menu">
+    <img src="./images/logo/Escape_black.svg" alt="Escape">
+    <nav class="navigation footer__navigation">
+      <a href="#" class="navigation__link">Home</a>
+      <a href="#" class="navigation__link">Categories</a>
+      <a href="#" class="navigation__link">About</a>
+      <a href="#" class="navigation__link">Contact</a>
+    </nav>
+</footer>
 </body>
 </html>
