@@ -115,7 +115,7 @@
     padding: 32px 270px 31px 250px;
 }
 
-.section__header-text_footer
+.footer__header-text_footer
 { 
   padding: 81px 0 0 0;
   line-height: 30px;
@@ -124,7 +124,7 @@
   color: #EFEFEF;
 }
 
-.section__header
+.footer__header
 {  
     display: flex;
     width: 100%;
@@ -132,7 +132,7 @@
     justify-content: center;
 }
 
-.section__header-text
+.footer__header-text
 {
     font: 20px/1.35 'Oxygen', sans-serif;
     letter-spacing: 2px;
@@ -140,7 +140,7 @@
     position: relative;
 }
 
-.section__header-text::before
+.footer__header-text::before
 {
     position: absolute;
     content: url(../images/decorations/header_underline.svg);
@@ -148,7 +148,7 @@
     left: -20px;
 }
 
-.section__header-text_footer
+.footer__header-text_footer
 { 
   padding: 81px 0 0 0;
   line-height: 30px;
