@@ -42,7 +42,7 @@
     letter-spacing: 0.6px;
     display: flex;
     justify-content: space-between;
-    width: 35%;
+    width: 35%; 
 }
 
 .navigation__link
