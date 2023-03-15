@@ -15,7 +15,7 @@
     <header class="top-block">
       <div class="page__menu top-block__page-menu">
         <img src="./images/logo/Escape_white.svg" alt="Escape">
-        <nav class="navigation top-block__navigation">
+        <nav class="navigation">
           <a href="#" class="navigation__link">Home</a>
           <a href="#" class="navigation__link">Categories</a>
           <a href="#" class="navigation__link">About</a>
@@ -41,7 +41,7 @@
         <h2 class="section__header-text">Featured Posts</h2>
       </div>
       <div class="main-section__card main-section__card_first">
-        <h3 class="card__header">The Road Ahead</h3>
+        <h3 class="card__header-text">The Road Ahead</h3>
         <p class="card__text">The road ahead might be paved - it might not be.</p>
         <div class="card__signature">
           <div class="card__author">
@@ -53,7 +53,7 @@
       </div>
       <div class="main-section__card main-section__card_second">
         <span class="card__label">Adventure</span>
-        <h3 class="card__header">From Top Down</h3>
+        <h3 class="card__header-text">From Top Down</h3>
         <p class="card__text">Once a year, go someplace you’ve never been before.</p>
         <div class="card__signature">
           <div class="card__author">
@@ -73,8 +73,10 @@
         <h3 class="card__header-text card__header-text_alt">Still Standing Tall</h3>
         <p class="card__text card__text_alt">Life begins at the end of your comfort zone.</p>
         <div class="card__signature card__signature_alt">
-          <img src="./images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <div class="card__author">
+            <img src="./images/avatars/william_wong.png" alt="William Wong">
+            <span class="card__author-name card__author-name_alt">William Wong</span>
+          </div>
           <span class="card__date card__date_alt">9/25/2015</span>
         </div>
       </div>
@@ -83,8 +85,10 @@
         <h3 class="card__header-text card__header-text_alt">Sunny Side Up</h3>
         <p class="card__text card__text_alt">No place is ever as bad as they tell you it’s going to be.</p>
         <div class="card__signature card__signature_alt">
-          <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
-          <span class="card__author-name card__author-name_alt">Mat Vogels</span>
+          <div class="card__author">
+            <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
+            <span class="card__author-name card__author-name_alt">Mat Vogels</span>
+          </div>
           <span class="card__date card__date_alt">9/25/2015</span>
         </div>
       </div>
@@ -93,8 +97,10 @@
         <h3 class="card__header-text card__header-text_alt">Water Falls</h3>
         <p class="card__text card__text_alt">We travel not to escape life, but for life not to escape us.</p>
         <div class="card__signature card__signature_alt">
-          <img src="./images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <div class="card__author">
+            <img src="./images/avatars/william_wong.png" alt="William Wong">
+            <span class="card__author-name card__author-name_alt">William Wong</span>
+          </div>
           <span class="card__date card__date_alt">9/25/2015</span>
         </div>
       </div>
@@ -103,8 +109,10 @@
         <h3 class="card__header-text card__header-text_alt">Through the Mist</h3>
         <p class="card__text card__text_alt">Travel makes you see what a tiny place you occupy in the world.</p>
         <div class="card__signature card__signature_alt">
-          <img src="./images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <div class="card__author">
+            <img src="./images/avatars/william_wong.png" alt="William Wong">
+            <span class="card__author-name card__author-name_alt">William Wong</span>
+          </div>
           <span class="card__date card__date_alt">9/25/2015</span>
         </div>
       </div>
@@ -113,8 +121,10 @@
         <h3 class="card__header-text card__header-text_alt">Awaken Early</h3>
         <p class="card__text card__text_alt">Not all those who wander are lost.</p>
         <div class="card__signature card__signature_alt">
-          <img src="./images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <div class="card__author">
+            <img src="./images/avatars/william_wong.png" alt="William Wong">
+            <span class="card__author-name card__author-name_alt">William Wong</span>
+          </div>
           <span class="card__date card__date_alt">9/25/2015</span>
         </div>
       </div>
@@ -124,20 +134,31 @@
         <p class="card__text card__text_alt">The world is a book, and those who do not travel read only one
           page.</p>
         <div class="card__signature card__signature_alt">
-          <img src="./images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_alt">William Wong</span>
+          <div class="card__author">
+            <img src="./images/avatars/william_wong.png" alt="William Wong">
+            <span class="card__author-name card__author-name_alt">William Wong</span>
+          </div>
           <span class="card__date card__date_alt">9/25/2015</span>
         </div>
       </div>
     </section>
-    <footer class="page__menu">
-      <img src="./images/logo/Escape_black.svg" alt="Escape">
-      <nav class="navigation footer__navigation">
-        <a href="#" class="navigation__link">Home</a>
-        <a href="#" class="navigation__link">Categories</a>
-        <a href="#" class="navigation__link">About</a>
-        <a href="#" class="navigation__link">Contact</a>
-      </nav>
+    <footer class="footer">
+      <div class="section__header">
+        <h2 class="section__header-text section__header-text_footer">Stay in Touch</h2>
+      </div>
+      <form action="#" method="post" class="lead-form">
+        <input type="email" name="email" id="leadEmail" class="lead-form__field" placeholder="Enter your email address">
+        <button class="button form__button">Submit</button>
+      </form>
+      <div class="page__menu page__menu_footer">
+        <img src="./images/logo/Escape_white.svg" alt="Escape">
+        <nav class="navigation navigation_footer">
+          <a href="#" class="navigation__link navigation__link_footer">Home</a>
+          <a href="#" class="navigation__link navigation__link_footer">Categories</a>
+          <a href="#" class="navigation__link navigation__link_footer">About</a>
+          <a href="#" class="navigation__link navigation__link_footer">Contact</a>
+        </nav>
+      </div>
     </footer>
   </div>
 </body>
