@@ -65,9 +65,9 @@
 
 .article__text
 {
-  padding: 0 0 40px 0;
-  font: 24px/1.46 'Oxygen', sans-serif;  
-  color: #101315;
+    padding: 0 0 40px 0;
+    font: 24px/1.46 'Oxygen', sans-serif;  
+    color: #101315;
 }
 
 .button
@@ -103,9 +103,10 @@
 
 .footer
 {
-    background-image: url(/images/backgrounds/footer_background.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
+  background-image: url(/images/backgrounds/footer_background.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 81px 0 0 0;
 } 
 
 .page__menu_footer
@@ -117,7 +118,6 @@
 
 .footer__header-text_footer
 { 
-  padding: 81px 0 0 0;
   line-height: 30px;
 /* identical to box height, or 120% */
   text-align: center;
@@ -150,40 +150,39 @@
 
 .footer__header-text_footer
 { 
-  padding: 81px 0 0 0;
-  line-height: 30px;
+    line-height: 30px;
 /* identical to box height, or 120% */
-  text-align: center;
-  color: #EFEFEF;
+    text-align: center;
+    color: #EFEFEF;
 }
 
 .lead-form {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  margin: 0 0 90px 0;
-  align-items: baseline;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin: 0 0 90px 0;
+    align-items: baseline;
 }
 
 .lead-form__field
 {
-  height: 50px;
-  width: 375px;
-  padding: 0 0 0 35px;
-  background: #FFFFFF;
-  border-radius: 3px 0px 0px 3px;
+    height: 50px;
+    width: 375px;
+    padding: 0 0 0 35px;
+    background: #FFFFFF;
+    border-radius: 3px 0px 0px 3px;
 }
 
 .form__button
 {
-  width: 125px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.28);
-  border-radius: 0px 3px 3px 0px;
-  color: #FFF;
+    width: 125px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.28);
+    border-radius: 0px 3px 3px 0px;
+    color: #FFF;
 }
 
 .navigation__link_footer
 {
-  color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
 }
