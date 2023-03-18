@@ -4,14 +4,6 @@
     margin: 0;
 }
 
-.section-container
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #F7F7F7;
-}
-
 .top-block
 {
     background: #000 url(../images/backgrounds/top_block_background.jpg);
@@ -19,30 +11,27 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
-    padding: 20px 270px 160px 250px;
+    padding: 0 0 160px 0;
 }
 
-.page__menu
+.menu
 {
-    display: inherit;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
 
-.top-block__page-menu
+.top-block__menu
 {
-    margin: 0 0 131px 0;
+    padding: 20px 0 131px 0;
 }
 
 .navigation
 {
-    font: 12px/1.67 'Oxygen', sans-serif;
-    text-transform: uppercase;
-    justify-self: end;
-    letter-spacing: 0.6px;
     display: flex;
+    font: 12px/1.67 'Oxygen', sans-serif;
     justify-content: space-between;
-    width: 35%; 
+    min-width: 20%;
+    text-transform: uppercase;
 }
 
 .navigation__link
@@ -84,25 +73,37 @@
     align-self: center;
 }
 
-.page-navigation
+
+.section-container
 {
-    padding: 22px 296px 23px 286px;
+    padding: 81px 0 48px;
     display: flex;
-    justify-content: space-around;
-    background-color: #FFF;
+    flex-direction: column;
+    background: #F7F7F7;
 }
 
-.page-navigation__link
+.navigation_standalone
 {
+    max-width: 45%;
     font: 14px/1.43 'Lora', serif;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #FFF;
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 20px auto;
+}
+
+.navigation__link_grey
+{
     color: #768088;
-    text-decoration: none;
 }
 
 .section
 {
-    padding: 60px 0 0 0;
-    width: 940px;
+    padding: 0 0 60px 0;
+    max-width: 940px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -113,7 +114,7 @@
 {  
     display: flex;
     width: 100%;
-    margin: 0 0 40px 0;
+    padding: 0 0 40px 0;
     justify-content: center;
 }
 
@@ -150,26 +151,34 @@
     height: 26px;
 }
 
-.main-section__card
+.card
 {
+    height: 280px;
+    width: 460px;
     display: flex;
     flex-direction: column;
     justify-content: end;
     border-radius: 3px;
-    padding: 10px 20px 20px 20px;
-    height: 245px;
-    width: 420px;
     position: relative;
 }
 
-.main-section__card_first
+.card__image
 {
-    background-image: url(../images/cards/the_road_ahead.png);
+  width: 296px;
+  height: 150px; 
 }
 
-.main-section__card_second
+.card__image_as-background
 {
-    background-image: url(../images/cards/from_top_down.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.card__content-container
+{
+    margin: 20px;
+    z-index: 1;
 }
 
 .card__header
@@ -188,8 +197,8 @@
 .card__signature
 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin-top: auto;
 }
 
 .card__author
@@ -205,12 +214,7 @@
     margin-left: 10px;
 }
 
-.section_alt
-{
-    padding-bottom: 108px;
-}
-
-.card__header_alt
+.card__header_small
 {
     color: #101315;
     font-size: 16px;
@@ -218,13 +222,8 @@
     margin: 14px 13px 7px;
 }
 
-.card__image
-{
-    width: 296px;
-    height: 150px;
-}
 
-.card__subheader_alt
+.card__subheader_small
 {
     font-size: 13px;
     line-height: 19px;
@@ -232,28 +231,21 @@
     padding: 0 13px 12px;
 }
 
-.card__author-name_alt
+.card__author-name_small, .card__date_small
 {
-    color: #999999;
+    color: #999;
 }
 
-.card__date_alt
-{
-    color: #999999;
-}
-
-.alt-section__card
+.card_small
 {
     width: 296px;
-    background: #FFFFFF;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    height: auto;
+    background: #FFF;
+    justify-content: flex-start;
     margin: 0 0 20px 0;
 }
 
-.card__signature_alt
+.card__signature_small
 {
     padding: 12px 13px 10px;
     border-top: 2px solid #EFEFEF;
@@ -265,31 +257,32 @@
     background-repeat: no-repeat;
     background-size: 100%;
     padding: 81px 0 0 0;
+    display: flex;
+    flex-direction: column;
 } 
 
-.page__menu_footer
+.footer__menu
 {
-    display: flex;
     background: rgba(35, 47, 56, 0.6);
-    padding: 32px 270px 22px 250px;
+    padding: 30px 0;
 }
 
-.header_footer
+.header_white
 { 
   line-height: 30px;
   text-align: center;
   color: #EFEFEF;
 }
 
-.lead-form {
+.form {
   display: flex;
   justify-content: center;
   margin: auto;
-  margin: 0 0 90px 0;
+  padding: 0 0 90px 0;
   align-items: baseline;
 }
 
-.lead-form__field
+.form__field
 {
   height: 50px;
   width: 375px;

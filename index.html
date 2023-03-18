@@ -12,7 +12,7 @@
 
 <body>
   <header class="top-block">
-    <div class="page__menu top-block__page-menu">
+    <div class="menu top-block__menu">
       <img src="./images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
         <a href="#" class="navigation__link">Home</a>
@@ -27,132 +27,140 @@
     </p>
     <button class="button top-block__button">View Latest Posts</button>
   </header>
-  <nav class="page-navigation">
-    <a href="#" class="page-navigation__link">Nature</a>
-    <a href="#" class="page-navigation__link">Photography</a>
-    <a href="#" class="page-navigation__link">Relaxation</a>
-    <a href="#" class="page-navigation__link">Vacation</a>
-    <a href="#" class="page-navigation__link">Travel</a>
-    <a href="#" class="page-navigation__link">Adventure</a>
+  <nav class="navigation navigation_standalone">
+    <a href="#" class="navigation__link navigation__link_grey">Nature</a>
+    <a href="#" class="navigation__link navigation__link_grey">Photography</a>
+    <a href="#" class="navigation__link navigation__link_grey">Relaxation</a>
+    <a href="#" class="navigation__link navigation__link_grey">Vacation</a>
+    <a href="#" class="navigation__link navigation__link_grey">Travel</a>
+    <a href="#" class="navigation__link navigation__link_grey">Adventure</a>
   </nav>
   <div class="section-container">
     <section class="section">
       <div class="header-container">
         <h2 class="header">Featured Posts</h2>
       </div>
-      <div class="main-section__card main-section__card_first">
-        <h3 class="card__header">The Road Ahead</h3>
-        <p class="card__subheader">The road ahead might be paved - it might not be.</p>
-        <div class="card__signature">
-          <div class="card__author">
-            <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
-            <span class="card__author-name">Mat Vogels</span>
+      <div class="card">
+        <img class="card__image card__image_as-background" src="/images/cards/the_road_ahead.png" alt="The road ahead">
+        <div class="card__content-container">
+          <h3 class="card__header">The Road Ahead</h3>
+          <p class="card__subheader">The road ahead might be paved - it might not be.</p>
+          <div class="card__signature">
+            <div class="card__author">
+              <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
+              <span class="card__author-name">Mat Vogels</span>
+            </div>
+            <span class="card__date">September 25, 2015</span>
           </div>
-          <span class="card__date">September 25, 2015</span>
         </div>
       </div>
-      <div class="main-section__card main-section__card_second">
-        <span class="card__label">Adventure</span>
-        <h3 class="card__header">From Top Down</h3>
-        <p class="card__subheader">Once a year, go someplace you’ve never been before.</p>
-        <div class="card__signature">
-          <div class="card__author">
-            <img src="./images/avatars/william_wong.png" alt="William Wong">
-            <span class="card__author-name">William Wong</span>
+      <div class="card">
+        <img class="card__image card__image_as-background" src="/images/cards/from_top_down.png" alt="The road ahead">
+        <div class="card__content-container">
+          <span class="card__label">Adventure</span>
+          <h3 class="card__header">From Top Down</h3>
+          <p class="card__subheader">Once a year, go someplace you’ve never been before.</p>
+          <div class="card__signature">
+            <div class="card__author">
+              <img src="./images/avatars/william_wong.png" alt="William Wong">
+              <span class="card__author-name">William Wong</span>
+            </div>
+            <span class="card__date">September 25, 2015</span>
           </div>
-          <span class="card__date">September 25, 2015</span>
         </div>
       </div>
     </section>
-    <section class="section section_alt">
+    <section class="section">
       <div class="header-container">
         <h2 class="header">Most Recent</h2>
       </div>
-      <div class="alt-section__card">
+      <div class="card card_small">
         <img class="card__image" src="./images/cards/still_standing_tall.jpg" alt="Still Standing Tall">
-        <h3 class="card__header card__header_alt">Still Standing Tall</h3>
-        <p class="card__subheader card__subheader_alt">Life begins at the end of your comfort zone.</p>
-        <div class="card__signature card__signature_alt">
+        <h3 class="card__header card__header_small">Still Standing Tall</h3>
+        <p class="card__subheader card__subheader_small">Life begins at the end of your comfort zone.</p>
+        <div class="card__signature card__signature_small">
           <div class="card__author">
             <img src="./images/avatars/william_wong.png" alt="William Wong">
-            <span class="card__author-name card__author-name_alt">William Wong</span>
+            <span class="card__author-name card__author-name_small">William Wong</span>
           </div>
-          <span class="card__date card__date_alt">9/25/2015</span>
+          <span class="card__date card__date_small">9/25/2015</span>
         </div>
       </div>
-      <div class="alt-section__card">
+      <div class="card card_small">
         <img class="card__image" src="./images/cards/sunny_side_up.png" alt="Sunny Side Up">
-        <h3 class="card__header card__header_alt">Sunny Side Up</h3>
-        <p class="card__subheader card__subheader_alt">No place is ever as bad as they tell you it’s going to be.</p>
-        <div class="card__signature card__signature_alt">
+        <h3 class="card__header card__header_small">Sunny Side Up</h3>
+        <p class="card__subheader card__subheader_small">No place is ever as bad as they tell you it’s going to be.</p>
+        <div class="card__signature card__signature_small">
           <div class="card__author">
             <img src="./images/avatars/mat_vogels.png" alt="Mat Vogels">
-            <span class="card__author-name card__author-name_alt">Mat Vogels</span>
+            <span class="card__author-name card__author-name_small">Mat Vogels</span>
           </div>
-          <span class="card__date card__date_alt">9/25/2015</span>
+          <span class="card__date card__date_small">9/25/2015</span>
         </div>
       </div>
-      <div class="alt-section__card">
+      <div class="card card_small">
         <img class="card__image" src="./images/cards/water_falls.png" alt="Water Falls">
-        <h3 class="card__header card__header_alt">Water Falls</h3>
-        <p class="card__subheader card__subheader_alt">We travel not to escape life, but for life not to escape us.</p>
-        <div class="card__signature card__signature_alt">
-          <div class="card__author">
-            <img src="./images/avatars/william_wong.png" alt="William Wong">
-            <span class="card__author-name card__author-name_alt">William Wong</span>
-          </div>
-          <span class="card__date card__date_alt">9/25/2015</span>
-        </div>
-      </div>
-      <div class="alt-section__card">
-        <img class="card__image" src="./images/cards/through_the_mist.png" alt="Through the Mist">
-        <h3 class="card__header card__header_alt">Through the Mist</h3>
-        <p class="card__subheader card__subheader_alt">Travel makes you see what a tiny place you occupy in the world.
+        <h3 class="card__header card__header_small">Water Falls</h3>
+        <p class="card__subheader card__subheader_small">
+          We travel not to escape life, but for life not to escape us.
         </p>
-        <div class="card__signature card__signature_alt">
+        <div class="card__signature card__signature_small">
           <div class="card__author">
             <img src="./images/avatars/william_wong.png" alt="William Wong">
-            <span class="card__author-name card__author-name_alt">William Wong</span>
+            <span class="card__author-name card__author-name_small">William Wong</span>
           </div>
-          <span class="card__date card__date_alt">9/25/2015</span>
+          <span class="card__date card__date_small">9/25/2015</span>
         </div>
       </div>
-      <div class="alt-section__card">
+      <div class="card card_small">
+        <img class="card__image" src="./images/cards/through_the_mist.png" alt="Through the Mist">
+        <h3 class="card__header card__header_small">Through the Mist</h3>
+        <p class="card__subheader card__subheader_small">Travel makes you see what a tiny place you occupy in the world.
+        </p>
+        <div class="card__signature card__signature_small">
+          <div class="card__author">
+            <img src="./images/avatars/william_wong.png" alt="William Wong">
+            <span class="card__author-name card__author-name_small">William Wong</span>
+          </div>
+          <span class="card__date card__date_small">9/25/2015</span>
+        </div>
+      </div>
+      <div class="card card_small">
         <img class="card__image" src="./images/cards/awaken_early.png" alt="Awaken Early">
-        <h3 class="card__header card__header_alt">Awaken Early</h3>
-        <p class="card__subheader card__subheader_alt">Not all those who wander are lost.</p>
-        <div class="card__signature card__signature_alt">
+        <h3 class="card__header card__header_small">Awaken Early</h3>
+        <p class="card__subheader card__subheader_small">Not all those who wander are lost.</p>
+        <div class="card__signature card__signature_small">
           <div class="card__author">
             <img src="./images/avatars/william_wong.png" alt="William Wong">
-            <span class="card__author-name card__author-name_alt">William Wong</span>
+            <span class="card__author-name card__author-name_small">William Wong</span>
           </div>
-          <span class="card__date card__date_alt">9/25/2015</span>
+          <span class="card__date card__date_small">9/25/2015</span>
         </div>
       </div>
-      <div class="alt-section__card">
+      <div class="card card_small">
         <img class="card__image" src="./images/cards/try_it_always.png" alt="Try it Always">
-        <h3 class="card__header card__header_alt">Try it Always</h3>
-        <p class="card__subheader card__subheader_alt">The world is a book, and those who do not travel read only one
+        <h3 class="card__header card__header_small">Try it Always</h3>
+        <p class="card__subheader card__subheader_small">The world is a book, and those who do not travel read only one
           page.</p>
-        <div class="card__signature card__signature_alt">
+        <div class="card__signature card__signature_small">
           <div class="card__author">
             <img src="./images/avatars/william_wong.png" alt="William Wong">
-            <span class="card__author-name card__author-name_alt">William Wong</span>
+            <span class="card__author-name card__author-name_small">William Wong</span>
           </div>
-          <span class="card__date card__date_alt">9/25/2015</span>
+          <span class="card__date card__date_small">9/25/2015</span>
         </div>
       </div>
     </section>
   </div>
   <footer class="footer">
     <div class="header-container">
-      <h2 class="header header_footer">Stay in Touch</h2>
+      <h2 class="header header_white">Stay in Touch</h2>
     </div>
-    <form action="#" method="post" class="lead-form">
-      <input type="email" name="email" id="leadEmail" class="lead-form__field" placeholder="Enter your email address">
+    <form action="#" method="post" class="form">
+      <input type="email" name="email" id="leadEmail" class="form__field" placeholder="Enter your email address">
       <button class="button form__button">Submit</button>
     </form>
-    <div class="page__menu page__menu_footer">
+    <div class="menu footer__menu">
       <img src="./images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
         <a href="#" class="navigation__link navigation__link_footer">Home</a>
