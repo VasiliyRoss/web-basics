@@ -20,7 +20,7 @@
     justify-content: space-around;
 }
 
-.top-block__menu
+.menu_with-custom-padding
 {
     padding: 20px 0 131px 0;
 }
@@ -39,6 +39,11 @@
     text-decoration: none;
     color: #FFF;
     margin: 0 20px 0 0;
+}
+
+.navigation__link_black
+{
+    color: #000;
 }
 
 .top-block__header
@@ -161,13 +166,13 @@
 
 .card_left
 {
-  background-image: url(/images/cards/the_road_ahead.png);
+  background-image: url(../images/cards/the_road_ahead.png);
 
 }
 
 .card_right
 {
-  background-image: url(/images/cards/from_top_down.png);
+  background-image: url(../images/cards/from_top_down.png);
 }
 
 .card__header
@@ -243,7 +248,7 @@
 
 .footer
 {
-    background-image: url(/images/backgrounds/footer_background.png);
+    background-image: url(../images/backgrounds/footer_background.png);
     background-size: cover;
     padding: 81px 0 0 0;
     display: flex;
@@ -293,4 +298,44 @@
 .navigation__link_footer
 {
   color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* Post */
+.article__header
+{
+    font: 50px/1.02 'Lora', serif;
+    letter-spacing: 2px;
+    color: #000;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.article__subheader
+{
+    font: 17px/1.18 'Oxygen', sans-serif;
+    text-align: center;
+    color: rgba(46, 46, 46, 0.63);
+    padding: 0 0 110px 0;
+}
+
+.article__image
+{
+    width: 100%;
+}
+
+.article__text-container
+{
+    max-width: 66%;
+    margin: 140px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article__text
+{
+    padding: 0 0 40px 0;
+    font: 24px/1.46 'Oxygen', sans-serif;  
+    color: #101315;
 }
