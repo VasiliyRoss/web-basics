@@ -102,6 +102,7 @@
     height: 44px;
     border-radius: 3px;
     border-width: 0;
+    cursor: pointer;
 }
 
 .top-block__button
