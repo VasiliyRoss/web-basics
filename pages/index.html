@@ -23,7 +23,7 @@
     </div>
     <h1 class="top-block__header">{{ .Title }}</h1>
     <p class="top-block__subheader">{{ .Subtitle }}</p>
-    <button class="button top-block__button">View Latest Posts</button>
+    <button class="button top-block__button">{{ .Button }}</button>
   </header>
   <nav class="navigation navigation_standalone">
     <a href="#" class="navigation__link navigation__link_grey">Nature</a>
@@ -36,94 +36,32 @@
   <div class="section-container">
     <section class="section">
       <h2 class="header">Featured Posts</h2>
-      <div class="card card_left">
-        <h3 class="card__header">The Road Ahead</h3>
-        <p class="card__subheader">The road ahead might be paved - it might not be.</p>
+      {{ range .FeaturedPosts }}
+      <div class="card">
+        <h3 class="card__header">{{ .Title }}</h3>
+        <p class="card__subheader">{{ .Subtitle }}</p>
         <div class="card__signature">
-          <img src="../assets/images/avatars/mat_vogels.png" alt="Mat Vogels">
-          <span class="card__author-name">Mat Vogels</span>
-          <span class="card__date">September 25, 2015</span>
+          <img src={{ .AuthorImg }} alt={{ .Author }}>
+          <span class="card__author-name">{{ .Author }}</span>
+          <span class="card__date">{{ .PublishDate }}</span>
         </div>
       </div>
-      <div class="card card_right">
-        <span class="card__label">Adventure</span>
-        <h3 class="card__header">From Top Down</h3>
-        <p class="card__subheader">Once a year, go someplace you’ve never been before.</p>
-        <div class="card__signature">
-          <img src="../assets/images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name">William Wong</span>
-          <span class="card__date">September 25, 2015</span>
-        </div>
-      </div>
+      {{ end }}
     </section>
     <section class="section">
       <h2 class="header">Most Recent</h2>
+      {{ range .MostRecentPosts }}
       <div class="card card_small">
-        <img class="card__image" src="../assets/images/cards/still_standing_tall.jpg" alt="Still Standing Tall">
-        <h3 class="card__header card__header_small">Still Standing Tall</h3>
-        <p class="card__subheader card__subheader_small">Life begins at the end of your comfort zone.</p>
+        <img class="card__image" src={{ .PostImage }} alt={{ .Title }}>
+        <h3 class="card__header card__header_small">{{ .Title }}</h3>
+        <p class="card__subheader card__subheader_small">{{ .Subtitle }}</p>
         <div class="card__signature card__signature_small">
-          <img src="../assets/images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_small">William Wong</span>
-          <span class="card__date card__date_small">9/25/2015</span>
+          <img src={{ .AuthorImg }} alt={{ .Author }}>
+          <span class="card__author-name card__author-name_small">{{ .Author }}</span>
+          <span class="card__date card__date_small">{{ .PublishDate }}</span>
         </div>
       </div>
-      <div class="card card_small">
-        <img class="card__image" src="../assets/images/cards/sunny_side_up.png" alt="Sunny Side Up">
-        <h3 class="card__header card__header_small">Sunny Side Up</h3>
-        <p class="card__subheader card__subheader_small">No place is ever as bad as they tell you it’s going to be.</p>
-        <div class="card__signature card__signature_small">
-          <img src="../assets/images/avatars/mat_vogels.png" alt="Mat Vogels">
-          <span class="card__author-name card__author-name_small">Mat Vogels</span>
-          <span class="card__date card__date_small">9/25/2015</span>
-        </div>
-      </div>
-      <div class="card card_small">
-        <img class="card__image" src="../assets/images/cards/water_falls.png" alt="Water Falls">
-        <h3 class="card__header card__header_small">Water Falls</h3>
-        <p class="card__subheader card__subheader_small">
-          We travel not to escape life, but for life not to escape us.
-        </p>
-        <div class="card__signature card__signature_small">
-          <img src="../assets/images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_small">William Wong</span>
-          <span class="card__date card__date_small">9/25/2015</span>
-        </div>
-      </div>
-      <div class="card card_small">
-        <img class="card__image" src="../assets/images/cards/through_the_mist.png" alt="Through the Mist">
-        <h3 class="card__header card__header_small">Through the Mist</h3>
-        <p class="card__subheader card__subheader_small">Travel makes you see what a tiny place you occupy in the
-          world.
-        </p>
-        <div class="card__signature card__signature_small">
-          <img src="../assets/images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_small">William Wong</span>
-          <span class="card__date card__date_small">9/25/2015</span>
-        </div>
-      </div>
-      <div class="card card_small">
-        <img class="card__image" src="../assets/images/cards/awaken_early.png" alt="Awaken Early">
-        <h3 class="card__header card__header_small">Awaken Early</h3>
-        <p class="card__subheader card__subheader_small">Not all those who wander are lost.</p>
-        <div class="card__signature card__signature_small">
-          <img src="../assets/images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_small">William Wong</span>
-          <span class="card__date card__date_small">9/25/2015</span>
-        </div>
-      </div>
-      <div class="card card_small">
-        <img class="card__image" src="../assets/images/cards/try_it_always.png" alt="Try it Always">
-        <h3 class="card__header card__header_small">Try it Always</h3>
-        <p class="card__subheader card__subheader_small">The world is a book, and those who do not travel read only
-          one
-          page.</p>
-        <div class="card__signature card__signature_small">
-          <img src="../assets/images/avatars/william_wong.png" alt="William Wong">
-          <span class="card__author-name card__author-name_small">William Wong</span>
-          <span class="card__date card__date_small">9/25/2015</span>
-        </div>
-      </div>
+      {{ end }}
     </section>
   </div>
   <footer class="footer">
