@@ -15,10 +15,9 @@
     <div class="menu menu_with-custom-padding">
       <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
-        <a href="#" class="navigation__link">Home</a>
-        <a href="#" class="navigation__link">Categories</a>
-        <a href="#" class="navigation__link">About</a>
-        <a href="#" class="navigation__link">Contact</a>
+        {{ range .SiteNavigation }}
+        <a href="{{ .Link }}" class="navigation__link">{{ .Name }}</a>
+        {{ end }}
       </nav>
     </div>
     <h1 class="top-block__header">{{ .Title }}</h1>
@@ -26,18 +25,15 @@
     <button class="button top-block__button">{{ .Button }}</button>
   </header>
   <nav class="navigation navigation_standalone">
-    <a href="#" class="navigation__link navigation__link_grey">Nature</a>
-    <a href="#" class="navigation__link navigation__link_grey">Photography</a>
-    <a href="#" class="navigation__link navigation__link_grey">Relaxation</a>
-    <a href="#" class="navigation__link navigation__link_grey">Vacation</a>
-    <a href="#" class="navigation__link navigation__link_grey">Travel</a>
-    <a href="#" class="navigation__link navigation__link_grey">Adventure</a>
+    {{ range .CategoryNavigation }}
+    <a href="{{ .Link }}" class="navigation__link navigation__link_grey">{{ .Name }}</a>
+    {{ end }}
   </nav>
   <div class="section-container">
     <section class="section">
       <h2 class="header">Featured Posts</h2>
       {{ range .FeaturedPosts }}
-      <div class="card" style="background: url({{ .PostImage}})">
+      <div onClick="window.location.href={{ .PostLink }}" class="card" style="background-image: url({{ .PostImage}})">
         <h3 class="card__header">{{ .Title }}</h3>
         <p class="card__subheader">{{ .Subtitle }}</p>
         <div class="card__signature">
@@ -64,19 +60,20 @@
       {{ end }}
     </section>
   </div>
-  <footer class="footer">
-    <h2 class="header header_white">Stay in Touch</h2>
+  {{ range .Footer }}
+  <footer class="footer" style="background-image: url({{ .BackgroundImg}})">
+    <h2 class="header header_white">{{ .FormHeader }}</h2>
     <form action="#" method="post" class="form">
-      <input type="email" name="email" id="leadEmail" class="form__field" placeholder="Enter your email address">
-      <button class="button form__button">Submit</button>
+      <input type="email" name="email" id="leadEmail" class="form__field" placeholder="{{ .FormText }}">
+      <button class="button form__button">{{ .FormButton }}</button>
     </form>
+    {{ end }}
     <div class="menu footer__menu">
       <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
-        <a href="#" class="navigation__link navigation__link_footer">Home</a>
-        <a href="#" class="navigation__link navigation__link_footer">Categories</a>
-        <a href="#" class="navigation__link navigation__link_footer">About</a>
-        <a href="#" class="navigation__link navigation__link_footer">Contact</a>
+        {{ range .SiteNavigation }}
+        <a href="{{ .Link }}" class="navigation__link navigation__link_footer">{{ .Name }}</a>
+        {{ end }}
       </nav>
     </div>
   </footer>

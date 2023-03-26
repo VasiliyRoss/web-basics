@@ -162,6 +162,7 @@
     border-radius: 3px;
     position: relative;
     background-size: cover;
+    cursor: pointer;
 }
 
 .card_left
@@ -248,7 +249,6 @@
 
 .footer
 {
-    background-image: url(../images/backgrounds/footer_background.png);
     background-size: cover;
     padding: 81px 0 0 0;
     display: flex;
