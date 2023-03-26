@@ -9,7 +9,7 @@ import (
 type indexPage struct {
 	Title              string
 	Subtitle           string
-	Button		         string
+	Button		       string
 	FeaturedPosts      []featuredPostData
 	MostRecentPosts    []mostRecentPostsData	
 }
@@ -42,8 +42,8 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 	data := indexPage{
 		Title:             "Let's do it together.",
-		Subtitle:	         "We travel the world in search of stories. Come along for the ride.",
-		Button:						 "View Latest Posts",
+		Subtitle:	       "We travel the world in search of stories. Come along for the ride.",
+		Button:			   "View Latest Posts",
 		FeaturedPosts:     featuredPosts(),
 		MostRecentPosts:   mostRecentPosts(),
 	}
@@ -80,7 +80,7 @@ func post(w http.ResponseWriter, r *http.Request) {
 func featuredPosts() []featuredPostData {
 	return []featuredPostData{
 		{
-			PostImage: "background-image: url(assets/images/cards/the_road_ahead.png)",
+			PostImage: "assets/images/cards/the_road_ahead.png",
 			Title:    "The Road Ahead",
 			Subtitle: "The road ahead might be paved - it might not be.",
 			Author: "Mat Vogels",
