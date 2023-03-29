@@ -25,7 +25,9 @@
     <p class="article__subheader">{{ .Subtitle }}</p>
     <img class="article__image" src="{{ .ArticleImage }}" alt="{{ .Title }}">
     <div class="article__text-container">
-      <p class="article__text">{{ .ArticleText }}</p>
+      {{ range .ArticleText }}
+      <p class="article__text">{{ . }}</p>
+      {{ end }}
     </div>
   </article>
   <footer class="footer">
