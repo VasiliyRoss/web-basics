@@ -14,9 +14,10 @@
   <header class="menu menu_with-custom-padding">
     <img src="../assets/images/logo/Escape_black.svg" alt="Escape">
     <nav class="navigation">
-      {{ range .SiteNavigation }}
-      <a href="{{ .Link }}" class="navigation__link navigation__link_black">{{ .Name }}</a>
-      {{ end }}
+      <a href="#" class="navigation__link navigation__link_black">Home</a>
+      <a href="#" class="navigation__link navigation__link_black">Categoties</a>
+      <a href="#" class="navigation__link navigation__link_black">About</a>
+      <a href="#" class="navigation__link navigation__link_black">Contact</a>
     </nav>
   </header>
   <article class="article">
@@ -25,24 +26,23 @@
     <img class="article__image" src="{{ .ArticleImage }}" alt="{{ .Title }}">
     <div class="article__text-container">
       {{ range .ArticleText}}
-      <p class="article__text">{{ .Paragraph }}</p>
+      <p class="article__text">{{ .Text }}</p>
       {{end}}
     </div>
   </article>
-  {{ range .Footer }}
-  <footer class="footer" style="background-image: url({{ .BackgroundImg}})">
-    <h2 class="header header_white">{{ .FormHeader }}</h2>
+  <footer class="footer">
+    <h2 class=" header header_white">Stay in Touch</h2>
     <form action="#" method="post" class="form">
-      <input type="email" name="email" id="leadEmail" class="form__field" placeholder="{{ .FormText }}">
-      <button class="button form__button">{{ .FormButton }}</button>
+      <input type="email" name="email" id="leadEmail" class="form__field" placeholder="Enter your email address">
+      <button class="button form__button">Submit</button>
     </form>
-    {{ end }}
     <div class="menu footer__menu">
       <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
-        {{ range .SiteNavigation }}
-        <a href="{{ .Link }}" class="navigation__link navigation__link_footer">{{ .Name }}</a>
-        {{ end }}
+        <a href="#" class="navigation__link navigation__link_footer">Home</a>
+        <a href="#" class="navigation__link navigation__link_footer">Categoties</a>
+        <a href="#" class="navigation__link navigation__link_footer">About</a>
+        <a href="#" class="navigation__link navigation__link_footer">Contact</a>
       </nav>
     </div>
   </footer>

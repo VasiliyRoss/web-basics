@@ -5,29 +5,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Title }}</title>
+  <title>Let's do it together.</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="top-block">
+  <header class="top-block">bout
     <div class="menu menu_with-custom-padding">
       <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
-        {{ range .SiteNavigation }}
-        <a href="{{ .Link }}" class="navigation__link">{{ .Name }}</a>
-        {{ end }}
+        <a href="#" class="navigation__link">Home</a>
+        <a href="#" class="navigation__link">Categoties</a>
+        <a href="#" class="navigation__link">About</a>
+        <a href="#" class="navigation__link">Contact</a>
       </nav>
     </div>
-    <h1 class="top-block__header">{{ .Title }}</h1>
-    <p class="top-block__subheader">{{ .Subtitle }}</p>
-    <button class="button top-block__button">{{ .Button }}</button>
+    <h1 class="top-block__header">Let's do it together.</h1>
+    <p class="top-block__subheader">We travel the world in search of stories. Come along for the ride.</p>
+    <button class="button top-block__button">View Latest Posts</button>
   </header>
   <nav class="navigation navigation_standalone">
-    {{ range .CategoryNavigation }}
-    <a href="{{ .Link }}" class="navigation__link navigation__link_grey">{{ .Name }}</a>
-    {{ end }}
+    <a href="#" class="navigation__link navigation__link_grey">Nature</a>
+    <a href="#" class="navigation__link navigation__link_grey">Photography</a>
+    <a href="#" class="navigation__link navigation__link_grey">Relaxation</a>
+    <a href="#" class="navigation__link navigation__link_grey">Vacation</a>
+    <a href="#" class="navigation__link navigation__link_grey">Travel</a>
+    <a href="#" class="navigation__link navigation__link_grey">Adventure</a>
   </nav>
   <div class="section-container">
     <section class="section">
@@ -35,6 +39,7 @@
       {{ range .FeaturedPosts }}
       <div onClick="window.location.href={{ .PostLink }}" class="card" style="background-image: url({{ .PostImage}})">
         <h3 class="card__header">{{ .Title }}</h3>
+        <span class="card__label {{ if .Category}} {{ else }} card__label_hidden {{ end }}">{{ .Category }}</span>
         <p class="card__subheader">{{ .Subtitle }}</p>
         <div class="card__signature">
           <img src={{ .AuthorImg }} alt={{ .Author }}>
@@ -60,20 +65,19 @@
       {{ end }}
     </section>
   </div>
-  {{ range .Footer }}
-  <footer class="footer" style="background-image: url({{ .BackgroundImg}})">
-    <h2 class="header header_white">{{ .FormHeader }}</h2>
+  <footer class="footer">
+    <h2 class=" header header_white">Stay in Touch</h2>
     <form action="#" method="post" class="form">
-      <input type="email" name="email" id="leadEmail" class="form__field" placeholder="{{ .FormText }}">
-      <button class="button form__button">{{ .FormButton }}</button>
+      <input type="email" name="email" id="leadEmail" class="form__field" placeholder="Enter your email address">
+      <button class="button form__button">Submit</button>
     </form>
-    {{ end }}
     <div class="menu footer__menu">
       <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
-        {{ range .SiteNavigation }}
-        <a href="{{ .Link }}" class="navigation__link navigation__link_footer">{{ .Name }}</a>
-        {{ end }}
+        <a href="#" class="navigation__link navigation__link_footer">Home</a>
+        <a href="#" class="navigation__link navigation__link_footer">Categoties</a>
+        <a href="#" class="navigation__link navigation__link_footer">About</a>
+        <a href="#" class="navigation__link navigation__link_footer">Contact</a>
       </nav>
     </div>
   </footer>
