@@ -14,7 +14,7 @@
   <header class="menu menu_with-custom-padding">
     <img src="../assets/images/logo/Escape_black.svg" alt="Escape">
     <nav class="navigation">
-      <a href="#" class="navigation__link navigation__link_black">Home</a>
+      <a href="/home" class="navigation__link navigation__link_black">Home</a>
       <a href="#" class="navigation__link navigation__link_black">Categoties</a>
       <a href="#" class="navigation__link navigation__link_black">About</a>
       <a href="#" class="navigation__link navigation__link_black">Contact</a>
@@ -25,9 +25,7 @@
     <p class="article__subheader">{{ .Subtitle }}</p>
     <img class="article__image" src="{{ .ArticleImage }}" alt="{{ .Title }}">
     <div class="article__text-container">
-      {{ range .ArticleText}}
-      <p class="article__text">{{ .Text }}</p>
-      {{end}}
+      <p class="article__text">{{ .ArticleText }}</p>
     </div>
   </article>
   <footer class="footer">
@@ -39,7 +37,7 @@
     <div class="menu footer__menu">
       <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
-        <a href="#" class="navigation__link navigation__link_footer">Home</a>
+        <a href="/home" class="navigation__link navigation__link_footer">Home</a>
         <a href="#" class="navigation__link navigation__link_footer">Categoties</a>
         <a href="#" class="navigation__link navigation__link_footer">About</a>
         <a href="#" class="navigation__link navigation__link_footer">Contact</a>
