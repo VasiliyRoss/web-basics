@@ -170,15 +170,9 @@
     cursor: pointer;
 }
 
-.card_left
+.card__image 
 {
-  background-image: url(../images/cards/the_road_ahead.png);
-
-}
-
-.card_right
-{
-  background-image: url(../images/cards/from_top_down.png);
+    height: 150px;
 }
 
 .card__header

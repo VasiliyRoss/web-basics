@@ -1,4 +1,4 @@
-CREATE TABLE post
+CREATE TABLE post 
 (
   `post_id`      INT NOT NULL AUTO_INCREMENT,
   `title`        VARCHAR(255) NOT NULL,
@@ -7,6 +7,7 @@ CREATE TABLE post
   `author_url`   VARCHAR(255) NOT NULL,
   `publish_date` VARCHAR(255) NOT NULL,
   `image_url`    VARCHAR(255) NOT NULL,
+  `category`     VARCHAR(255),
   `featured`     TINYINT(1) DEFAULT 0,
   PRIMARY KEY (`post_id`)
 ) ENGINE = InnoDB
