@@ -37,7 +37,7 @@
     <section class="section">
       <h2 class="header">Featured Posts</h2>
       {{ range .FeaturedPosts }}
-      <div onClick="window.location.href={{ .PostLink }}" class="card" style="background-image: url({{ .PostImage}})">
+      <div class="card" style="background-image: url({{ .PostImage}})">
         <h3 class="card__header">{{ .Title }}</h3>
         <span class="card__label {{ if .Category}} {{ else }} card__label_hidden {{ end }}">{{ .Category }}</span>
         <p class="card__subheader">{{ .Subtitle }}</p>
