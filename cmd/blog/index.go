@@ -19,8 +19,9 @@ type featuredPostData struct {
 	Author      string  `db:"author"`
 	AuthorImg   string  `db:"author_url"`
 	PublishDate string  `db:"publish_date"`
-	PostImage   string  `db:"image_url"`
+	PostImage   string  `db:"card_image_url"`
 	Category    string  `db:"category"`
+	Id   		int     `db:"post_id"`
 }
 
 type mostRecentPostsData struct {
@@ -29,7 +30,8 @@ type mostRecentPostsData struct {
 	Author      string  `db:"author"`
 	AuthorImg   string  `db:"author_url"`
 	PublishDate string  `db:"publish_date"`
-	PostImage   string  `db:"image_url"`
+	PostImage   string  `db:"card_image_url"`
+	Id   		int     `db:"post_id"`
 }
 
 func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
@@ -78,7 +80,8 @@ func featuredPosts(db *sqlx.DB) ([]featuredPostData, error) {
 			author, 
 			author_url, 
 			publish_date, 
-			image_url,
+			card_image_url,
+			post_id,
 			COALESCE(category, '') AS category    /* чтобы не было ошибки в случае category = NULL */
 		FROM
 			post
@@ -103,7 +106,8 @@ func mostRecentPosts(db *sqlx.DB) ([]mostRecentPostsData, error) {
 			author, 
 			author_url, 
 			publish_date, 
-			image_url
+			card_image_url,
+			post_id
 		FROM
 			post
 		WHERE featured = 0

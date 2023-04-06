@@ -25,7 +25,7 @@ func main() {
 	
 	mux := http.NewServeMux()
 	mux.HandleFunc("/home", index(dbx))
-	mux.HandleFunc("/post", post)
+	mux.HandleFunc("/1", post(dbx))
 	
 	// Реализуем отдачу статики
 	mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))

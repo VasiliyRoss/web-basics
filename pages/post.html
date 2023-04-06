@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {{ range .PostContent }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Title }}</title>
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -15,7 +16,7 @@
     <img src="../assets/images/logo/Escape_black.svg" alt="Escape">
     <nav class="navigation">
       <a href="/home" class="navigation__link navigation__link_black">Home</a>
-      <a href="#" class="navigation__link navigation__link_black">Categoties</a>
+      <a href="#" class="navigation__link navigation__link_black">Categories</a>
       <a href="#" class="navigation__link navigation__link_black">About</a>
       <a href="#" class="navigation__link navigation__link_black">Contact</a>
     </nav>
@@ -25,9 +26,7 @@
     <p class="article__subheader">{{ .Subtitle }}</p>
     <img class="article__image" src="{{ .ArticleImage }}" alt="{{ .Title }}">
     <div class="article__text-container">
-      {{ range .ArticleText }}
-      <p class="article__text">{{ . }}</p>
-      {{ end }}
+      <p class="article__text">{{ .ArticleText }}</p>
     </div>
   </article>
   <footer class="footer">
@@ -40,10 +39,11 @@
       <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
       <nav class="navigation">
         <a href="/home" class="navigation__link navigation__link_footer">Home</a>
-        <a href="#" class="navigation__link navigation__link_footer">Categoties</a>
+        <a href="#" class="navigation__link navigation__link_footer">Categories</a>
         <a href="#" class="navigation__link navigation__link_footer">About</a>
         <a href="#" class="navigation__link navigation__link_footer">Contact</a>
       </nav>
+      {{ end }}
     </div>
   </footer>
 
