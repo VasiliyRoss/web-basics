@@ -22,11 +22,18 @@ func main() {
 	}
 
 	dbx := sqlx.NewDb(db, dbDriverName) // Расширяем стандартный клиент к базе	
-	
+
 	mux := http.NewServeMux()
 	mux.HandleFunc("/home", index(dbx))
-	mux.HandleFunc("/1", post(dbx))
-	
+	mux.HandleFunc("/1", post(dbx, 1))
+	mux.HandleFunc("/2", post(dbx, 2))
+	mux.HandleFunc("/3", post(dbx, 3))
+	mux.HandleFunc("/4", post(dbx, 4))
+	mux.HandleFunc("/5", post(dbx, 5))
+	mux.HandleFunc("/6", post(dbx, 6))
+	mux.HandleFunc("/7", post(dbx, 7))
+	mux.HandleFunc("/8", post(dbx, 8))
+
 	// Реализуем отдачу статики
 	mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
 

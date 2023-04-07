@@ -19,9 +19,9 @@ type postPageData struct {
 	ArticleText  string  `db:"article_text"`
 }
 
-func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+func post(db *sqlx.DB, postId int) func(w http.ResponseWriter, r *http.Request) {
     return func(w http.ResponseWriter, r *http.Request) {
-		postContent, err := postContent(db)
+		postContent, err := postContent(db, postId)
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
 			log.Println(err)
@@ -50,21 +50,20 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func postContent(db *sqlx.DB) ([]postPageData, error) {
+func postContent(db *sqlx.DB, postId int) ([]postPageData, error) {
 	const query = `
 		SELECT
 			title, 
 			subtitle, 
-			post_image_url,
-            article_text
+			COALESCE(post_image_url, '') AS post_image_url,
+            COALESCE(article_text, '') AS article_text
 		FROM
 			post
-		WHERE post_id = 1;
-	` // Составляем SQL-запрос для получения записей для секции featured-posts
+		WHERE post_id = ?`// Составляем SQL-запрос для получения записей для секции featured-posts
 
 	var post []postPageData // Заранее объявляем массив с результирующей информацией
 
-	err := db.Select(&post, query) // Делаем запрос в базу данных
+	err := db.Select(&post, query, postId) // Делаем запрос в базу данных
 	if err != nil {                 // Проверяем, что запрос в базу данных не завершился с ошибкой
 		return nil, err
 	}

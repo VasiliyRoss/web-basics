@@ -52,7 +52,7 @@
     <section class="section">
       <h2 class="header">Most Recent</h2>
       {{ range .MostRecentPosts }}
-      <div class="card card_small">
+      <div onClick="window.location.href={{ .Id }}" class="card card_small">
         <img class="card__image" src={{ .PostImage }} alt={{ .Title }}>
         <h3 class="card__header card__header_small">{{ .Title }}</h3>
         <p class="card__subheader card__subheader_small">{{ .Subtitle }}</p>
