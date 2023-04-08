@@ -111,7 +111,7 @@ func mostRecentPosts(db *sqlx.DB) ([]mostRecentPostsData, error) {
 		FROM
 			post
 		WHERE featured = 0
-	` // Составляем SQL-запрос для получения записей для секции featured-posts
+	`
 	
 	var posts []mostRecentPostsData // Заранее объявляем массив с результирующей информацией
 
