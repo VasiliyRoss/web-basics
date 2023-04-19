@@ -24,9 +24,9 @@
   <article class="article">
     <h1 class="article__header">{{ .Title }}</h1>
     <p class="article__subheader">{{ .Subtitle }}</p>
-    <img class="article__image" src="{{ .ArticleImage }}" alt="{{ .Title }}">
+    <div class="article__image" style="background-image: url({{ .ArticleImage}})"></div>
     <div class="article__text-container">
-      <p class="article__text">{{ .ArticleText }}</p>
+      <p class="article__text">{{ .Content }}</p>
     </div>
   </article>
   <footer class="footer">

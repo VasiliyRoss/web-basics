@@ -10,7 +10,7 @@ CREATE TABLE post
   `post_image_url`     VARCHAR(255),
   `category`     VARCHAR(255),
   `featured`     TINYINT(1) DEFAULT 0,
-  `article_text` TEXT(65535),
+  `content` TEXT(65535) NOT NULL,
   PRIMARY KEY (`post_id`)
 ) ENGINE = InnoDB
 CHARACTER SET = utf8mb4

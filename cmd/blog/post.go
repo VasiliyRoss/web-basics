@@ -16,7 +16,7 @@ type postPageData struct {
 	Title        string `db:"title"`
 	Subtitle     string `db:"subtitle"`
 	ArticleImage string `db:"post_image_url"`
-	ArticleText  string `db:"article_text"`
+	Content  	   string `db:"content"`
 }
 
 func post(db *sqlx.DB, postId int) func(w http.ResponseWriter, r *http.Request) {
@@ -55,8 +55,8 @@ func postContent(db *sqlx.DB, postId int) ([]postPageData, error) {
 		SELECT
 			title, 
 			subtitle, 
-			COALESCE(post_image_url, '') AS post_image_url,
-            COALESCE(article_text, '') AS article_text
+			post_image_url,
+      content
 		FROM
 			post
 		WHERE post_id = ?`
