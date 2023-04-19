@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"log"
 	"net/http"
-	"strconv"
 
 	_ "github.com/go-sql-driver/mysql" // Импортируем для возможности подключения к MySQL
+	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 )
 
@@ -26,19 +26,13 @@ func main() {
 
 	dbx := sqlx.NewDb(db, dbDriverName) // Расширяем стандартный клиент к базе
 
-	mux := http.NewServeMux()
+	mux := mux.NewRouter()
 	mux.HandleFunc("/home", index(dbx))
 
-	count := 8 //тут нужно брать кол-во из бд
-
-	// Выводим все страницы
-	for count != 0 {
-		mux.HandleFunc("/"+strconv.Itoa(count), post(dbx, count))
-		count--
-	}
+	mux.HandleFunc("/post/{postID}", post(dbx))
 
 	// Реализуем отдачу статики
-	mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
+	mux.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
 
 	log.Println(startMessage + port)
 	err = http.ListenAndServe(port, mux)
