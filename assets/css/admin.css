@@ -11,7 +11,8 @@
 
 .header
 {
-    padding: 0 130px;
+    padding: 0 9%;
+    margin: 0 0 64px 0;
     background-color: #2E2E2E;
     justify-content: space-between;
     align-items: center;  
@@ -39,10 +40,100 @@
 
 .form
 {
-    padding: 0 130px;
+    padding: 0 9%;
+}
+
+.form__header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
 }
 
 .form__title-wrapper
 {
+    padding: auto;
+}
+
+.form__title
+{
+    font: 34px/1.2 'Lora', serif;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.form__subtitle
+{
+    font: 14px/1.43 'Oxygen', serif;
+    color: rgba(46, 46, 46, 0.63);
+}
+
+.form__publish-button
+{
+    width: 100px;
+    height: 48px;
+    border-radius: 3px;
+    border-width: 0;
+    cursor: pointer;
+    background: #DD783F;
+    color: #fff;
+    font: 13px/1.54 'Oxygen', sans-serif;
+    align-self: center;
+}
+
+.post-settings-wrapper
+{
     display: flex;
+    background-color: #FFF;
+    padding: 40px;
+}
+
+.post-description
+{
+    display: flex;
+    flex-direction: column;
+    width: 58%;  
+}
+
+.post-description__title
+{
+    font: 27px/1.1 'Lora', serif;
+    color: #000000;
+    padding-bottom: 8px;   
+}
+
+.post-preview
+{
+    width: 42%;
+}
+
+.post-preview__post
+{
+    width: 440px;
+    height: 385px;
+    background: #FFF;
+    border: 1px solid #D3D3D3;
+    border-radius: 30px 0px;
+    position: relative;
+}
+
+.post-preview__gradient_vertical
+{
+    background: linear-gradient(to right, rgb(255, 255, 255, 0), 20%, rgb(255, 255, 255));
+    position: absolute;
+    height: 102%;
+    width: 30%;
+    right: -1px;
+    top: -1px;
+}
+
+.post-preview__gradient_horizontal
+{
+    background: linear-gradient(to bottom, rgb(255, 255, 255, 0), 20%, rgb(255, 255, 255));
+    position: absolute;
+    height: 20%;
+    width: 101%;
+    left: -1px;
+    bottom: -1px;
 }
