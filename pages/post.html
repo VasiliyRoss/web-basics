@@ -22,15 +22,15 @@
     </nav>
   </header>
   <article class="article">
-    <h1 class="article__header">{{ .Title }}</h1>
-    <p class="article__subheader">{{ .Subtitle }}</p>
+    <h1 class="article__title">{{ .Title }}</h1>
+    <p class="article__subtitle">{{ .Subtitle }}</p>
     <div class="article__image" style="background-image: url(../{{ .ArticleImage}})"></div>
     <div class="article__text-container">
       <p class="article__text">{{ .Content }}</p>
     </div>
   </article>
   <footer class="footer">
-    <h2 class=" header header_white">Stay in Touch</h2>
+    <h2 class=" title title_white">Stay in Touch</h2>
     <form action="#" method="post" class="form">
       <input type="email" name="email" id="leadEmail" class="form__field" placeholder="Enter your email address">
       <button class="button form__button">Submit</button>

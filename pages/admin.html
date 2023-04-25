@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Post</title>
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+  <header class="header">
+    <img class="logo" src="../assets/images/logo/admin-logo.png" alt="Escape.author">
+    <div class="tray">
+      <span class="tray__user-logo">N</span>
+      <img class="tray__admin-exit" src="../assets/images/decorations/admin-exit.png" alt="admin exit">
+    </div>
+  </header>
+  <form class="form" action="" method="post">
+    <div class="form__title-wrapper">
+      <h1 class="form__title">New post</h1>
+      <p class="form__subtitle">Fill out the form bellow and publish your article</p>
+      <button class="form__publish-button" type="submit">Publish</button>
+    </div>
+    <div class="post-information-wrapper">
+      <h2 class="">Main Information</h2>
+      <div class="post-description">
+        <input type="text" name="post_title" id="">
+        <input type="text" name="post_short_description" id="">
+        <input type="text" name="post_author_name" id="">
+        <input type="file" name="post_author_photo" id="">
+        <input type="date" name="post_publish_date" id="">
+        <input type="file" name="post_image" id="">
+        <input type="file" name="post_card_image" id="">
+      </div>
+      <div class="post-preview">
+        <div class="post_preview__post"></div>
+
+        <div class="post_preview__card"></div>
+      </div>
+    </div>
+    <div class="post-content">
+      <h2 class="">Content</h2>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+  </form>
+</body>
+
+</html>

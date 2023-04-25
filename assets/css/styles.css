@@ -46,7 +46,7 @@
     color: #000;
 }
 
-.top-block__header
+.top-block__title
 {
     font: 50px/1.02 'Lora', serif;
     letter-spacing: 2px;
@@ -55,7 +55,7 @@
     margin: 0 0 20px 0;
 }
 
-.top-block__subheader
+.top-block__subtitle
 {
     font: 17px/1.18 'Oxygen', sans-serif;
     color: rgba(255, 255, 255, 0.63);
@@ -115,7 +115,7 @@
     align-self: center;
 }
 
-.header
+.title
 {
     font: 20px/1.35 'Oxygen', sans-serif;
     letter-spacing: 2px;
@@ -127,10 +127,10 @@
     justify-content: center;
 }
 
-.header::before
+.title::before
 {
     position: absolute;
-    content: url(../images/decorations/header_underline.svg);
+    content: url(../images/decorations/title_underline.svg);
     top: 16px;
 }
 
@@ -175,13 +175,13 @@
     height: 150px;
 }
 
-.card__header
+.card__title
 {
     font: 27px/1.11 'Lora', serif;
     color: #FFF;
 }
 
-.card__subheader
+.card__subtitle
 {
     font: 14px/1.79 'Oxygen', sans-serif;
     color: rgba(255, 255, 255, 0.7);
@@ -208,7 +208,7 @@
   margin-left: auto;
 }
 
-.card__header_small
+.card__title_small
 {
     color: #101315;
     font-size: 16px;
@@ -216,7 +216,7 @@
     margin: 14px 13px 7px;
 }
 
-.card__subheader_small
+.card__subtitle_small
 {
     font-size: 13px;
     line-height: 19px;
@@ -261,7 +261,7 @@
     padding: 30px 0;
 }
 
-.header_white
+.title_white
 { 
     line-height: 30px;
     text-align: center;
@@ -300,7 +300,7 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-.article__header
+.article__title
 {
     font: 50px/1.02 'Lora', serif;
     letter-spacing: 2px;
@@ -309,7 +309,7 @@
     padding: 0 0 20px 0;
 }
 
-.article__subheader
+.article__subtitle
 {
     font: 17px/1.18 'Oxygen', sans-serif;
     text-align: center;

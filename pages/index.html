@@ -21,8 +21,8 @@
         <a href="#" class="navigation__link">Contact</a>
       </nav>
     </div>
-    <h1 class="top-block__header">Let's do it together.</h1>
-    <p class="top-block__subheader">We travel the world in search of stories. Come along for the ride.</p>
+    <h1 class="top-block__title">Let's do it together.</h1>
+    <p class="top-block__subtitle">We travel the world in search of stories. Come along for the ride.</p>
     <button class="button top-block__button">View Latest Posts</button>
   </header>
   <nav class="navigation navigation_standalone">
@@ -35,12 +35,12 @@
   </nav>
   <div class="section-container">
     <section class="section">
-      <h2 class="header">Featured Posts</h2>
+      <h2 class="title">Featured Posts</h2>
       {{ range .FeaturedPosts }}
       <div onClick="window.location.href={{ .PostURL }}" class="card" style="background-image: url({{ .PostImage}})">
-        <h3 class="card__header">{{ .Title }}</h3>
+        <h3 class="card__title">{{ .Title }}</h3>
         <span class="card__label {{ if .Category}} {{ else }} card__label_hidden {{ end }}">{{ .Category }}</span>
-        <p class="card__subheader">{{ .Subtitle }}</p>
+        <p class="card__subtitle">{{ .Subtitle }}</p>
         <div class="card__signature">
           <img src={{ .AuthorImg }} alt={{ .Author }}>
           <span class="card__author-name">{{ .Author }}</span>
@@ -50,12 +50,12 @@
       {{ end }}
     </section>
     <section class="section">
-      <h2 class="header">Most Recent</h2>
+      <h2 class="title">Most Recent</h2>
       {{ range .MostRecentPosts }}
       <div onClick="window.location.href={{ .PostURL }}" class="card card_small">
         <img class="card__image" src={{ .PostImage }} alt={{ .Title }}>
-        <h3 class="card__header card__header_small">{{ .Title }}</h3>
-        <p class="card__subheader card__subheader_small">{{ .Subtitle }}</p>
+        <h3 class="card__title card__title_small">{{ .Title }}</h3>
+        <p class="card__subtitle card__subtitle_small">{{ .Subtitle }}</p>
         <div class="card__signature card__signature_small">
           <img src={{ .AuthorImg }} alt={{ .Author }}>
           <span class="card__author-name card__author-name_small">{{ .Author }}</span>
@@ -66,7 +66,7 @@
     </section>
   </div>
   <footer class="footer">
-    <h2 class=" header header_white">Stay in Touch</h2>
+    <h2 class=" title title_white">Stay in Touch</h2>
     <form action="#" method="post" class="form">
       <input type="email" name="email" id="leadEmail" class="form__field" placeholder="Enter your email address">
       <button class="button form__button">Submit</button>

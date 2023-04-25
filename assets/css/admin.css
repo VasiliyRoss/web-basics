@@ -1,0 +1,48 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+.body
+{
+    background-color: #F5F5F5;
+}
+
+.header
+{
+    padding: 0 130px;
+    background-color: #2E2E2E;
+    justify-content: space-between;
+    align-items: center;  
+    height: 74px;
+    display: flex;
+}
+
+.tray
+{
+    display: flex;
+    align-items: center;
+}
+
+.tray__user-logo
+{
+    display: flex;
+    height: 32px;
+    width: 32px;
+    background-color: #DD783F;
+    border-radius: 50px;
+    color: #FFF;
+    justify-content: center;
+    align-items: center;
+}
+
+.form
+{
+    padding: 0 130px;
+}
+
+.form__title-wrapper
+{
+    display: flex;
+}
