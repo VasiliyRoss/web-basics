@@ -40,23 +40,23 @@ func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		featuredPosts, err := featuredPosts(db)
 		if err != nil {
-			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+			http.Error(w, "Internal Server Error", 500) 
 			log.Println(err)
-			return // Не забываем завершить выполнение ф-ии
+			return 
 		}
 
 		mostRecentPosts, err := mostRecentPosts(db)
 		if err != nil {
-			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+			http.Error(w, "Internal Server Error", 500) 
 			log.Println(err)
-			return // Не забываем завершить выполнение ф-ии
+			return 
 		}
 
-		ts, err := template.ParseFiles("pages/index.html") // Главная страница блога
+		ts, err := template.ParseFiles("pages/index.html") 
 		if err != nil {
-			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
-			log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
-			return                                      // Не забываем завершить выполнение ф-ии
+			http.Error(w, "Internal Server Error", 500) 
+			log.Println(err.Error())                    
+			return                                      
 		}
 
 		data := indexPage{
@@ -64,7 +64,7 @@ func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			MostRecentPosts: mostRecentPosts,
 		}
 
-		err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
+		err = ts.Execute(w, data)
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500)
 			log.Println(err.Error())
@@ -84,16 +84,16 @@ func featuredPosts(db *sqlx.DB) ([]*featuredPostData, error) {
 			publish_date, 
 			card_image_url,
 			post_id,
-			COALESCE(category, '') AS category    /* чтобы не было ошибки в случае category = NULL */
+			COALESCE(category, '') AS category
 		FROM
 			post
 		WHERE featured = 1
-	` // Составляем SQL-запрос для получения записей для секции featured-posts
+	`
 
-	var posts []*featuredPostData // Заранее объявляем массив с результирующей информацией
+	var posts []*featuredPostData 
 
-	err := db.Select(&posts, query) // Делаем запрос в базу данных
-	if err != nil {                 // Проверяем, что запрос в базу данных не завершился с ошибкой
+	err := db.Select(&posts, query) 
+	if err != nil {                 
 		return nil, err
 	}
 
@@ -119,10 +119,10 @@ func mostRecentPosts(db *sqlx.DB) ([]*mostRecentPostsData, error) {
 		WHERE featured = 0
 	`
 
-	var posts []*mostRecentPostsData // Заранее объявляем массив с результирующей информацией
+	var posts []*mostRecentPostsData
 
-	err := db.Select(&posts, query) // Делаем запрос в базу данных
-	if err != nil {                 // Проверяем, что запрос в базу данных не завершился с ошибкой
+	err := db.Select(&posts, query) 
+	if err != nil {                 
 		return nil, err
 	}
 
