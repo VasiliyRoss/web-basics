@@ -29,7 +29,7 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 
 		postID, err := strconv.Atoi(postIDStr)
 		if err != nil {
-			http.Error(w, "Invalid order id", 403)
+			http.Error(w, "Invalid post id", http.StatusForbidden)
 			log.Println(err)
 			return
 		}
@@ -44,14 +44,14 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 
 			http.Error(w, "Internal Server Error", 500)
 			log.Println(err)
-			return 
+			return
 		}
 
 		ts, err := template.ParseFiles("pages/post.html")
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500)
-			log.Println(err.Error())                 
-			return                                      
+			log.Println(err.Error())
+			return
 		}
 
 		data := postPage{
@@ -83,7 +83,7 @@ func postContent(db *sqlx.DB, postID int) ([]postPageData, error) {
 	var post []postPageData
 
 	err := db.Select(&post, query, postID)
-	if err != nil {                       
+	if err != nil {
 		return nil, err
 	}
 
