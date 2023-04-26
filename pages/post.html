@@ -7,13 +7,13 @@
   {{ range .PostContent }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Title }}</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header class="menu menu_with-custom-padding">
-    <a href="/home"><img src="../assets/images/logo/Escape_black.svg" alt="Escape"></a>
+    <a href="/home"><img src="/assets/images/logo/Escape_black.svg" alt="Escape"></a>
     <nav class="navigation">
       <a href="/home" class="navigation__link navigation__link_black">Home</a>
       <a href="#" class="navigation__link navigation__link_black">Categories</a>
@@ -24,7 +24,7 @@
   <article class="article">
     <h1 class="article__title">{{ .Title }}</h1>
     <p class="article__subtitle">{{ .Subtitle }}</p>
-    <div class="article__image" style="background-image: url(../{{ .ArticleImage}})"></div>
+    <div class="article__image" style="background-image: url({{ .ArticleImage}})"></div>
     <div class="article__text-container">
       <p class="article__text">{{ .Content }}</p>
     </div>
@@ -36,7 +36,7 @@
       <button class="button form__button">Submit</button>
     </form>
     <div class="menu footer__menu">
-      <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
+      <a href="/home"><img src="/assets/images/logo/Escape_white.svg" alt="Escape"></a>
       <nav class="navigation">
         <a href="/home" class="navigation__link navigation__link_footer">Home</a>
         <a href="#" class="navigation__link navigation__link_footer">Categories</a>

@@ -75,7 +75,7 @@ func postContent(db *sqlx.DB, postID int) ([]postPageData, error) {
 			title, 
 			subtitle, 
 			post_image_url,
-            content
+      content
 		FROM
 			post
 		WHERE post_id = ?`

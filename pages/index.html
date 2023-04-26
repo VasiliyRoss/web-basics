@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Let's do it together.</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header class="top-block">
     <div class="menu menu_with-custom-padding">
-      <a href="/home"><img src="../assets/images/logo/Escape_white.svg" alt="Escape"></a>
+      <a href="/home"><img src="/assets/images/logo/Escape_white.svg" alt="Escape"></a>
       <nav class="navigation">
         <a href="/home" class="navigation__link">Home</a>
         <a href="#" class="navigation__link">Categories</a>
@@ -39,7 +39,7 @@
       {{ range .FeaturedPosts }}
       <div onClick="window.location.href={{ .PostURL }}" class="card" style="background-image: url({{ .PostImage}})">
         <h3 class="card__title">{{ .Title }}</h3>
-        <span class="card__label {{ if .Category}} {{ else }} card__label_hidden {{ end }}">{{ .Category }}</span>
+        <span class="card__label_hidden {{ if .Category}} card__label_hidden {{ end }}">{{ .Category }}</span>
         <p class="card__subtitle">{{ .Subtitle }}</p>
         <div class="card__signature">
           <img src={{ .AuthorImg }} alt={{ .Author }}>
@@ -72,7 +72,7 @@
       <button class="button form__button">Submit</button>
     </form>
     <div class="menu footer__menu">
-      <img src="../assets/images/logo/Escape_white.svg" alt="Escape">
+      <a href="/home"><img src="/assets/images/logo/Escape_white.svg" alt="Escape"></a>
       <nav class="navigation">
         <a href="/home" class="navigation__link navigation__link_footer">Home</a>
         <a href="#" class="navigation__link navigation__link_footer">Categories</a>
