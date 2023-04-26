@@ -12,11 +12,7 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
-type postPage struct {
-	PostContent []postPageData
-}
-
-type postPageData struct {
+type postData struct {
 	Title        string `db:"title"`
 	Subtitle     string `db:"subtitle"`
 	ArticleImage string `db:"post_image_url"`
@@ -34,7 +30,7 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		postContent, err := postContent(db, postID)
+		postPageData, err := postContent(db, postID)
 		if err != nil {
 			if err == sql.ErrNoRows {
 				http.Error(w, "Post not found", 404)
@@ -54,11 +50,7 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		data := postPage{
-			PostContent: postContent,
-		}
-
-		err = ts.Execute(w, data)
+		err = ts.Execute(w, postPageData)
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500)
 			log.Println(err.Error())
@@ -69,22 +61,22 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func postContent(db *sqlx.DB, postID int) ([]postPageData, error) {
+func postContent(db *sqlx.DB, postID int) (postData, error) {
 	const query = `
 		SELECT
 			title, 
 			subtitle, 
 			post_image_url,
-      content
+			content
 		FROM
 			post
 		WHERE post_id = ?`
 
-	var post []postPageData
+	var post postData
 
-	err := db.Select(&post, query, postID)
+	err := db.Get(&post, query, postID)
 	if err != nil {
-		return nil, err
+		return postData{}, err
 	}
 
 	return post, nil
