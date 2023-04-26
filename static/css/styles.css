@@ -6,7 +6,7 @@
 
 .top-block
 {
-    background: #000 url(../images/backgrounds/top_block_background.jpg);
+    background: #000 url(/static/images/backgrounds/top_block_background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -130,7 +130,7 @@
 .title::before
 {
     position: absolute;
-    content: url(../images/decorations/title_underline.svg);
+    content: url(/static/images/decorations/header_underline.svg);
     top: 16px;
 }
 
@@ -249,7 +249,7 @@
 .footer
 {
     background-size: cover;
-    background-image: url(/assets/images/backgrounds/footer_background.png);
+    background-image: url(/static/images/backgrounds/footer_background.png);
     padding: 81px 0 0 0;
     display: flex;
     flex-direction: column;
