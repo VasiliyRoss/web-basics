@@ -173,6 +173,7 @@
     color: #7A7A7A;
     width: 100%;
 
+
 }
 
 .post-description__field
@@ -200,9 +201,10 @@
 
 .post-description__field-description
 {
-    font-family: 12px/16px 'Oxygen', sans-serif;
+    font: 12px/16px 'Oxygen', sans-serif;
     color: #999;
-    margin-bottom: 40px;
+
+    margin: 12px 0 40px;
 }
 
 .post-description__post-autor-photo-wrapper
@@ -233,6 +235,7 @@
   font: 14px/1.43 'Oxygen';
   color: #7A7A7A;
   margin-bottom: 15px;
+  margin: 5px;
 }
 
 .post-description__card-image-placeholder, .post-description__post-autor-photo-upload
