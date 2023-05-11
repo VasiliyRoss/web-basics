@@ -151,6 +151,11 @@
     height: 26px;
 }
 
+.card__hyperlink
+{
+    text-decoration: none;
+}
+
 .card__label_hidden 
 {
     display: none;

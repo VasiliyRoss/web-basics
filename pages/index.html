@@ -37,31 +37,35 @@
     <section class="section">
       <h2 class="title">Featured Posts</h2>
       {{ range .FeaturedPosts }}
-      <div onClick="window.location.href={{ .PostURL }}" class="card" style="background-image: url({{ .PostImage}})">
-        <h3 class="card__title">{{ .Title }}</h3>
-        <span class="card__label_hidden {{ if .Category}} card__label_hidden {{ end }}">{{ .Category }}</span>
-        <p class="card__subtitle">{{ .Subtitle }}</p>
-        <div class="card__signature">
-          <img src={{ .AuthorImg }} alt={{ .Author }}>
-          <span class="card__author-name">{{ .Author }}</span>
-          <span class="card__date">{{ .PublishDate }}</span>
+      <a class="card__hyperlink" href="/post/{{ .PostID }}">
+        <div class="card" style="background-image: url({{ .PostImage}})">
+          <h3 class="card__title">{{ .Title }}</h3>
+          <span class="card__label_hidden {{ if .Category}} card__label_hidden {{ end }}">{{ .Category }}</span>
+          <p class="card__subtitle">{{ .Subtitle }}</p>
+          <div class="card__signature">
+            <img src={{ .AuthorImg }} alt={{ .Author }}>
+            <span class="card__author-name">{{ .Author }}</span>
+            <span class="card__date">{{ .PublishDate }}</span>
+          </div>
         </div>
-      </div>
+      </a>
       {{ end }}
     </section>
     <section class="section">
       <h2 class="title">Most Recent</h2>
       {{ range .MostRecentPosts }}
-      <div onClick="window.location.href={{ .PostURL }}" class="card card_small">
-        <img class="card__image" src={{ .PostImage }} alt={{ .Title }}>
-        <h3 class="card__title card__title_small">{{ .Title }}</h3>
-        <p class="card__subtitle card__subtitle_small">{{ .Subtitle }}</p>
-        <div class="card__signature card__signature_small">
-          <img src={{ .AuthorImg }} alt={{ .Author }}>
-          <span class="card__author-name card__author-name_small">{{ .Author }}</span>
-          <span class="card__date card__date_small">{{ .PublishDate }}</span>
+      <a class="card__hyperlink" href="/post/{{ .PostID }}">
+        <div class="card card_small">
+          <img class="card__image" src={{ .PostImage }} alt={{ .Title }}>
+          <h3 class="card__title card__title_small">{{ .Title }}</h3>
+          <p class="card__subtitle card__subtitle_small">{{ .Subtitle }}</p>
+          <div class="card__signature card__signature_small">
+            <img src={{ .AuthorImg }} alt={{ .Author }}>
+            <span class="card__author-name card__author-name_small">{{ .Author }}</span>
+            <span class="card__date card__date_small">{{ .PublishDate }}</span>
+          </div>
         </div>
-      </div>
+      </a>
       {{ end }}
     </section>
   </div>

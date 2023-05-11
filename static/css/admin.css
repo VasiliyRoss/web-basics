@@ -223,11 +223,10 @@
   margin-left: 15px;
 }
 
-.post-description__post-autor-photo, .post-description__post-image, .post-description__post-card-image
+.post-description_file-input
 {
     position: absolute;
     visibility: hidden;
-    z-index: -1;
 }
 
 .post-preview__label
@@ -238,8 +237,25 @@
   margin: 5px;
 }
 
-.post-description__card-image-placeholder, .post-description__post-autor-photo-upload
+.post-description__author-photo
 {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.post-description__post-image
+{
+    width: 560px;
+    height: 160px;
+    cursor: pointer;
+}
+
+.post-description__card-image
+{
+    width: 296px;
+    height: 150px;
     cursor: pointer;
 }
 

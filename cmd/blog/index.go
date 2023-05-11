@@ -22,7 +22,6 @@ type featuredPostData struct {
 	PostImage   string `db:"card_image_url"`
 	Category    string `db:"category"`
 	PostID      string `db:"post_id"`
-	PostURL     string
 }
 
 type mostRecentPostsData struct {
@@ -33,30 +32,29 @@ type mostRecentPostsData struct {
 	PublishDate string `db:"publish_date"`
 	PostImage   string `db:"card_image_url"`
 	PostID      string `db:"post_id"`
-	PostURL     string
 }
 
 func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		featuredPosts, err := featuredPosts(db)
 		if err != nil {
-			http.Error(w, "Internal Server Error", 500) 
+			http.Error(w, "Internal Server Error", 500)
 			log.Println(err)
-			return 
+			return
 		}
 
 		mostRecentPosts, err := mostRecentPosts(db)
 		if err != nil {
-			http.Error(w, "Internal Server Error", 500) 
+			http.Error(w, "Internal Server Error", 500)
 			log.Println(err)
-			return 
+			return
 		}
 
-		ts, err := template.ParseFiles("pages/index.html") 
+		ts, err := template.ParseFiles("pages/index.html")
 		if err != nil {
-			http.Error(w, "Internal Server Error", 500) 
-			log.Println(err.Error())                    
-			return                                      
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err.Error())
+			return
 		}
 
 		data := indexPage{
@@ -90,15 +88,11 @@ func featuredPosts(db *sqlx.DB) ([]*featuredPostData, error) {
 		WHERE featured = 1
 	`
 
-	var posts []*featuredPostData 
+	var posts []*featuredPostData
 
-	err := db.Select(&posts, query) 
-	if err != nil {                 
+	err := db.Select(&posts, query)
+	if err != nil {
 		return nil, err
-	}
-
-	for _, posts := range posts {
-		posts.PostURL = "/post/" + posts.PostID
 	}
 
 	return posts, nil
@@ -121,13 +115,9 @@ func mostRecentPosts(db *sqlx.DB) ([]*mostRecentPostsData, error) {
 
 	var posts []*mostRecentPostsData
 
-	err := db.Select(&posts, query) 
-	if err != nil {                 
+	err := db.Select(&posts, query)
+	if err != nil {
 		return nil, err
-	}
-
-	for _, posts := range posts {
-		posts.PostURL = "/post/" + posts.PostID
 	}
 
 	return posts, nil
