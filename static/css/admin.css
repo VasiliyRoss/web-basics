@@ -217,24 +217,23 @@
 
 .upload-button
 {
-  font: 16px/24px 'Oxygen';
-  color: #2E2E2E;
-  cursor: pointer;
-  margin-left: 15px;
+    font: 16px/24px 'Oxygen';
+    color: #2E2E2E;
+    cursor: pointer;
+    margin-left: 15px;
 }
 
 .post-description_file-input
 {
-    position: absolute;
-    visibility: hidden;
+    display: none;
 }
 
 .post-preview__label
 {
-  font: 14px/1.43 'Oxygen';
-  color: #7A7A7A;
-  margin-bottom: 15px;
-  margin: 5px;
+    font: 14px/1.43 'Oxygen';
+    color: #7A7A7A;
+    margin-bottom: 15px;
+    margin: 5px;
 }
 
 .post-description__author-photo
@@ -243,6 +242,13 @@
     width: 48px;
     cursor: pointer;
     border-radius: 50px;
+    background-image: url(/static/images/decorations/avatar-placeholder.png);
+    background-size: cover;
+}
+
+.post-description__author-photo_hidden
+{
+    display: none;
 }
 
 .post-description__post-image
@@ -250,6 +256,8 @@
     width: 560px;
     height: 160px;
     cursor: pointer;
+    background-image: url(/static/images/decorations/post-img-placeholder.png);
+    background-size: cover;
 }
 
 .post-description__card-image
@@ -257,6 +265,8 @@
     width: 296px;
     height: 150px;
     cursor: pointer;
+    background-image: url(/static/images/decorations/card-placeholder.png);
+    background-size: cover;
 }
 
 .post-preview__card

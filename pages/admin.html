@@ -39,23 +39,28 @@
         <input class="post-description__field post-description__field_white-backgound" type="text"
           name="post_author_name" id="">
         <div class="post-description__post-autor-photo-wrapper">
-          <label class="post-description__label post-description__label_small-margin" for="post_author_photo">Author
-            Photo</label>
-          <input class="post-description_file-input" type="file" name="post_author_photo"
-            accept=".jpg, .jpeg, .png" id="">
-          <img class="post-description__author-photo" src="/static/images/decorations/avatar-placeholder.png" alt="" srcset="">
+          <p class="post-description__label post-description__label_small-margin">Author Photo</p>
+          <label class="post-description__author-photo" id="authorPhotoPlaceholder">
+            <input class="post-description_file-input" type="file" id="authorPhoto" name="post_author_photo"
+              onchange="loadAndPreviewAuthorPhoto()" accept=" .jpg, .jpeg, .png">
+          </label>
+          <img class="post-description__author-photo_hidden post-description__author-photo" id="authorPhotoDemo">
           <span class="upload-button">Upload</span>
         </div>
         <label class="post-description__label" for="post_publish_date">Publish Date</label>
         <input class="post-description__field post-description__field_white-backgound" type="date"
           name="post_publish_date" id="">
-        <label class="post-description__label" for="post_image">Hero Image</label>
-        <input class="post-description_file-input" type="file" name="post_image" id="">
-        <img class="post-description__post-image" src="/static/images/decorations/post-img-placeholder.png" alt="" srcset="">
+        <p class="post-description__label">Hero Image</p>
+        <label class="post-description__post-image">
+          <input class="post-description_file-input" type="file" name="post_image" onchange="loadAndPreviewPostImage()"
+            id="">
+        </label>
         <p class="post-description__field-description">Size up to 10mb. Format: png, jpeg, gif.</p>
-        <label class="post-description__label" for="post_card_image">Hero Image</label>
-        <input class="post-description_file-input" type="file" name="post_card_image" id="">
-        <img class="post-description__card-image" src="/static/images/decorations/card-placeholder.png" alt="" srcset="">
+        <p class="post-description__label">Hero Image</p>
+        <label class="post-description__card-image">
+          <input class="post-description_file-input" type="file" name="post_card_image"
+            onchange="loadAndPreviewCardImage()" id="">
+        </label>
         <p class="post-description__field-description">Size up to 5mb. Format: png, jpeg, gif.</p>
       </div>
       <div class="post-preview">
@@ -72,7 +77,7 @@
             <h3 class="card__title card__title_small">New Post</h3>
             <p class="card__subtitle card__subtitle_small">Please, enter any description</p>
             <div class="card__signature card__signature_small">
-              <div class="card__author-image card__author-image_placeholder"></div>
+              <img class="card__author-image card__author-image_placeholder" id="authorPhotoDemo">
               <span class="card__author-name card__author-name_small">Enter author name</span>
               <span class="card__date card__date_small">4/19/2023</span>
             </div>
@@ -91,4 +96,5 @@
   </form>
 </body>
 <script src="/static/js/admin.js"></script>
+
 </html>
