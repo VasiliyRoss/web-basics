@@ -3,19 +3,13 @@ var authorPhoto
 var cardImage
 var postImage
 
-function loadAndPreviewAuthorPhoto() {
-  const placeholder = document.getElementById("authorPhotoPlaceholder")
-  const preview = document.getElementById("authorPhotoDemo")
-  const file = document.getElementById("authorPhoto").files[0]
+function loadImage(container, file) {
   const reader = new FileReader()
 
   reader.addEventListener(
     "load",
     () => {
-      preview.src = reader.result
       authorPhoto = reader.result
-      placeholder.classList.toggle("post-description__author-photo_hidden")
-      preview.classList.toggle("post-description__author-photo_hidden")
     },
     false
   )
@@ -23,7 +17,14 @@ function loadAndPreviewAuthorPhoto() {
   if (file) {
     reader.readAsDataURL(file);
   }
+}
 
+function loadAndPreviewAuthorPhoto() {
+  const placeholder = document.getElementById("authorPhotoPlaceholder")
+  const preview = document.getElementById("authorPhotoDemo")
+  const file = document.getElementById("authorPhoto").files[0]
+
+  loadImage(authorPhoto, file)
 }
 
 
