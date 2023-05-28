@@ -1,53 +1,40 @@
-const form = document.getElementById('form')
-var authorPhoto
-var cardImage
-var postImage
-
-function loadImage(container, file) {
-  const reader = new FileReader()
-
-  reader.addEventListener(
-    "load",
-    () => {
-      authorPhoto = reader.result
-    },
-    false
-  )
-
-  if (file) {
-    reader.readAsDataURL(file);
+function displayText(inputId, displayClass) {
+  var inputText = document.getElementById(inputId).value;
+  var displayElements = document.getElementsByClassName(displayClass);
+  
+  for (var i = 0; i < displayElements.length; i++) {
+    displayElements[i].textContent = inputText;
   }
 }
 
-function loadAndPreviewAuthorPhoto() {
-  const placeholder = document.getElementById("authorPhotoPlaceholder")
-  const preview = document.getElementById("authorPhotoDemo")
-  const file = document.getElementById("authorPhoto").files[0]
+function uploadImage(event, id) {
+  var input = event.target;
+  var reader = new FileReader();
 
-  loadImage(authorPhoto, file)
+  reader.onload = function () {
+    var placeholderImage = document.getElementById('placeholder-' + id);
+    placeholderImage.src = reader.result;
+
+    var previewImage = document.getElementById('preview-' + id);
+    previewImage.src = reader.result;
+
+    var inputImage = document.getElementById('inputImage-' + id);
+    inputImage.value = reader.result;
+  };
+
+  reader.readAsDataURL(input.files[0]);
 }
-
+var form = document.getElementById('form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const formData = new FormData(form)
-  const title = formData.get('post_title')
-  const subtitle = formData.get('post_short_description')
-  const author = formData.get('post_author_name')
-  const publishDate = formData.get('post_publish_date')
-  const content = formData.get('content')
+  var formData = new FormData(form);
+  var formValues = {};
 
-  let post = JSON.stringify({
-    title: title,
-    subtitle: subtitle,
-    author: author,
-    authorPhoto: authorPhoto,
-    publishDate: publishDate,
-    postImage: postImage,
-    cardImage: cardImage,
-    content: content
-})
-  
-  console.log(post)
+  for (var pair of formData.entries()) {
+    formValues[pair[0]] = pair[1];
+  }
+
+  console.log(JSON.stringify(formValues));
 })

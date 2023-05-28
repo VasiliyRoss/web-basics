@@ -133,8 +133,8 @@
 {
     padding: 118px 24px 0;
     margin-bottom: 78px;
-    background-image: url(/static/images/decorations/post_preview.png);
     background-size: cover;
+    background-image: url(/static/images/decorations/post_preview.png);
     padding-bottom: 20px;
     position: relative;
 }
@@ -242,7 +242,6 @@
     width: 48px;
     cursor: pointer;
     border-radius: 50px;
-    background-image: url(/static/images/decorations/avatar-placeholder.png);
     background-size: cover;
 }
 
@@ -256,7 +255,6 @@
     width: 560px;
     height: 160px;
     cursor: pointer;
-    background-image: url(/static/images/decorations/post-img-placeholder.png);
     background-size: cover;
 }
 
@@ -265,7 +263,6 @@
     width: 296px;
     height: 150px;
     cursor: pointer;
-    background-image: url(/static/images/decorations/card-placeholder.png);
     background-size: cover;
 }
 
@@ -405,6 +402,7 @@
 .post-content__content
 {
     height: 160px;
+    max-width: 80%;
     background: #FFFFFF;
     border: 1px solid #EAEAEA;
     border-radius: 5px;
