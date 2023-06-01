@@ -24,7 +24,37 @@ function uploadImage(event, id) {
 
   reader.readAsDataURL(input.files[0]);
 }
-var form = document.getElementById('form');
+
+
+async function createPost() {
+  const titleInput = document.getElementById('postTitle')
+	const subtitleInput = document.getElementById('postDescription')
+  const authorInput = document.getElementById('postAuthor')
+  const authorPhotoInput = document.getElementById('inputImage-authorPhoto')
+  const publishDateInput = document.getElementById('postPublishDate')
+  const postImageInput = document.getElementById('inputImage-postImage')
+  const cardImageInput = document.getElementById('inputImage-cardImage')
+  const contentInput = document.getElementById('postContent')
+
+  const respose = await fetch('/api/post', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: titleInput.value,
+      subtitle: subtitleInput.value,
+      author: authorInput.value,
+      author_photo: authorPhotoInput.value,
+      publish_date: publishDateInput.value,
+      post_image: postImageInput.value,
+      card_image: cardImageInput.value,
+      content: contentInput.value,
+    })
+  })
+
+    console.log(respose.ok)
+  }
+
+  /* старая функция, которая работает с формой. Нужно использовать её 
+  var form = document.getElementById('form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -38,3 +68,5 @@ form.addEventListener('submit', (e) => {
 
   console.log(JSON.stringify(formValues));
 })
+  
+  */

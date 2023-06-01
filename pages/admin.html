@@ -18,27 +18,26 @@
       <img class="tray__admin-exit" src="/static/images/decorations/admin-exit.png" alt="admin exit">
     </div>
   </header>
-  <form class="form" action="#" method="post" id="form">
+  <div class="form">
     <div class="form__header">
       <div class="form__title-wrapper">
         <h1 class="form__title">New post</h1>
         <p class="form__subtitle">Fill out the form bellow and publish your article</p>
       </div>
-      <button class="form__publish-button" type="submit">Publish</button>
+      <button class="form__publish-button" onclick="createPost()">Publish</button>
     </div>
     <div class="post-settings-wrapper">
       <h2 class="post-settings__title">Main Information</h2>
       <div class="post-description">
         <label class="post-description__label">Title</label>
-        <input class="post-description__field post-description__field_white-backgound" type="text" name="post_title"
+        <input class="post-description__field post-description__field_white-backgound" type="text" name="title"
           id="postTitle" oninput="displayText('postTitle', 'post-title')" required>
         <label class="post-description__label">Short description</label>
-        <input class="post-description__field post-description__field_white-backgound" type="text"
-          name="post_short_description" id="postDescription"
-          oninput="displayText('postDescription', 'post-description-text')">
+        <input class="post-description__field post-description__field_white-backgound" type="text" name="subtitle"
+          id="postDescription" oninput="displayText('postDescription', 'post-description-text')">
         <label class="post-description__label">Author Name</label>
-        <input class="post-description__field post-description__field_white-backgound" type="text"
-          name="post_author_name" id="postAuthor" oninput="displayText('postAuthor', 'post-author')">
+        <input class="post-description__field post-description__field_white-backgound" type="text" name="author"
+          id="postAuthor" oninput="displayText('postAuthor', 'post-author')">
         <div class="post-description__post-autor-photo-wrapper">
           <p class="post-description__label post-description__label_small-margin">Author Photo</p>
           <label for="authorPhoto">
@@ -47,12 +46,12 @@
           </label>
           <input class="post-description_file-input" type="file" id="authorPhoto" onchange="uploadImage(event, this.id)"
             accept=" .jpg, .jpeg, .png, .gif">
-          <input type="hidden" id="inputImage-authorPhoto" name="post_author_photo">
+          <input type="hidden" id="inputImage-authorPhoto" name="author_photo">
           <label for="authorPhoto" class="upload-button">Upload</label>
         </div>
         <label class="post-description__label">Publish Date</label>
-        <input class="post-description__field post-description__field_white-backgound" type="date"
-          name="post_publish_date" id="postPublishDate" oninput="displayText('postPublishDate', 'post-publish-date')">
+        <input class="post-description__field post-description__field_white-backgound" type="date" name="publish_date"
+          id="postPublishDate" oninput="displayText('postPublishDate', 'post-publish-date')">
         <p class="post-description__label">Hero Image</p>
         <label class="post-description__post-image" for="postImage">
           <img src="/static/images/decorations/post-img-placeholder.png" class="post-description__post-image" alt=""
@@ -69,7 +68,7 @@
         </label>
         <input class="post-description_file-input" type="file" onchange="uploadImage(event, this.id)" id="cardImage"
           accept=" .jpg, .jpeg, .png, .gif">
-        <input type="hidden" id="inputImage-cardImage" name="post_card_image">
+        <input type="hidden" id="inputImage-cardImage" name="card_image">
         <p class="post-description__field-description">Size up to 5mb. Format: png, jpeg, gif.</p>
       </div>
       <div class="post-preview">
@@ -102,10 +101,10 @@
     <div class="post-content">
       <h2 class="form__title form__title_with-bottom-padding">Content</h2>
       <label class="post-content__label">Post content (plain text)</label>
-      <textarea placeholder="Type anything you want ..." class="post-content__content" name="content" id="" cols="30"
-        rows="10"></textarea>
+      <textarea placeholder="Type anything you want ..." class="post-content__content" name="content" id="postContent"
+        cols="30" rows="10"></textarea>
     </div>
-  </form>
+  </div>
 </body>
 <script src="/static/js/admin.js"></script>
 
