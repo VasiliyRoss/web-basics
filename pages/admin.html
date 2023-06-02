@@ -18,13 +18,13 @@
       <img class="tray__admin-exit" src="/static/images/decorations/admin-exit.png" alt="admin exit">
     </div>
   </header>
-  <div class="form">
+  <form class="form" action="#" method="post" id="form">
     <div class="form__header">
       <div class="form__title-wrapper">
         <h1 class="form__title">New post</h1>
         <p class="form__subtitle">Fill out the form bellow and publish your article</p>
       </div>
-      <button class="form__publish-button" onclick="createPost()">Publish</button>
+      <button class="form__publish-button" type="submit">Publish</button>
     </div>
     <div class="post-settings-wrapper">
       <h2 class="post-settings__title">Main Information</h2>
@@ -104,7 +104,7 @@
       <textarea placeholder="Type anything you want ..." class="post-content__content" name="content" id="postContent"
         cols="30" rows="10"></textarea>
     </div>
-  </div>
+  </form>
 </body>
 <script src="/static/js/admin.js"></script>
 

@@ -50,6 +50,7 @@ func createPost(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+
 func savePost(db *sqlx.DB, req createPostRequest) error {
 	const query = `
 	INSERT INTO
