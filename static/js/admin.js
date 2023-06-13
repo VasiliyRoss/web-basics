@@ -15,12 +15,12 @@ function resetFileInput(id, buttonId) {
   document.getElementById(buttonId).classList.add('block_hidden');
   
   var subdescription = document.getElementById('subdescription-' + id);
-  if (subdescription != null) {
+  if (subdescription) {
     subdescription.classList.remove('block_hidden')
   }
 
   var upload = document.getElementById('upload-' + id)
-  if (upload != null) {
+  if (upload) {
     upload.classList.remove('block_hidden')
   }
 
@@ -46,12 +46,12 @@ function uploadImage(event, id) {
     removeButton.classList.remove('block_hidden')
 
     var subdescription = document.getElementById('subdescription-' + id);
-    if (subdescription != null) {
+    if (subdescription) {
       subdescription.classList.add('block_hidden')
     }
 
     var upload = document.getElementById('upload-' + id)
-    if (upload != null) {
+    if (upload) {
       upload.classList.add('block_hidden')
     }
 
@@ -68,6 +68,7 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   var alertError = document.getElementById('alertError');
   var alertSuccess = document.getElementById('alertSuccess');
+  var errorMessages = document.getElementsByClassName('field__error');
 
   var formData = new FormData(form);
   var formValues = {};
@@ -84,10 +85,19 @@ form.addEventListener('submit', async (e) => {
   }
 
   var hasEmptyFields = false;
+  for (var i = 0; i < errorMessages.length; i++) {
+    errorMessages[i].classList.add('block_hidden');
+  }
+
   for (var pair of formData.entries()) {
+    var inputField = form.querySelector(`[name="${pair[0]}"]`);
+    var error = document.getElementById('error-' + pair[0]);
     if (!pair[1]) {
+      if (document.getElementById('error-' + pair[0])){
+        error.classList.remove('block_hidden')
+        inputField.classList.add('post-description__field_error');
+      }
       hasEmptyFields = true;
-      break;
     }
     if (pair[0] === "publish_date") {
       formValues[pair[0]] = convertDateFormat(pair[1]);

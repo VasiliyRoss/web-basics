@@ -248,12 +248,24 @@
     width: 100%;
 }
 
+.post-description__field-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.field__error
+{
+    font: 12px/1.33 'Oxygen', sans-serif;
+    color: #E86961;
+}
+
 .post-description__field
 {
     width: 560px;
     height: 40px;
     padding: 8px 4px;
-    margin-bottom: 40px;
     font: 16px/1.5 'Oxygen';
     color: #2E2E2E;
     background: #F7F7F7;
@@ -261,6 +273,12 @@
     border-bottom: 1px solid #2E2E2E;
     border-radius: 5px 5px 0px 0px;
 }
+
+.post-description__field_error
+{
+    border-bottom: 1px solid #E86961;
+}
+
 .post-description__label_small-margin
 {
     margin-bottom: 10px;

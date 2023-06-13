@@ -31,15 +31,24 @@
     <div class="post-settings-wrapper">
       <h2 class="post-settings__title">Main Information</h2>
       <div class="post-description">
-        <label class="post-description__label">Title</label>
-        <input class="post-description__field post-description__field_white-backgound" type="text" name="title"
-          id="postTitle" oninput="displayText('postTitle', 'post-title')">
-        <label class="post-description__label">Short description</label>
-        <input class="post-description__field post-description__field_white-backgound" type="text" name="subtitle"
-          id="postDescription" oninput="displayText('postDescription', 'post-description-text')">
-        <label class="post-description__label">Author Name</label>
-        <input class="post-description__field post-description__field_white-backgound" type="text" name="author"
-          id="postAuthor" oninput="displayText('postAuthor', 'post-author')">
+        <div class="post-description__field-wrapper">
+          <label class="post-description__label">Title</label>
+          <input class="post-description__field post-description__field_white-backgound" type="text" name="title"
+            id="postTitle" oninput="displayText('postTitle', 'post-title')">
+          <p class="field__error block_hidden" id="error-title">Title is required</p>
+        </div>
+        <div class="post-description__field-wrapper">
+          <label class="post-description__label">Short description</label>
+          <input class="post-description__field post-description__field_white-backgound" type="text" name="subtitle"
+            id="postDescription" oninput="displayText('postDescription', 'post-description-text')">
+          <p class="field__error block_hidden" id="error-subtitle">Descriprion is required</p>
+        </div>
+        <div class="post-description__field-wrapper">
+          <label class="post-description__label">Author Name</label>
+          <input class="post-description__field post-description__field_white-backgound" type="text" name="author"
+            id="postAuthor" oninput="displayText('postAuthor', 'post-author')">
+          <p class="field__error block_hidden" id="error-author">Author name is required</p>
+        </div>
         <div class="post-description__post-autor-photo-wrapper">
           <p class="post-description__label post-description__label_small-margin">Author Photo</p>
           <label for="authorPhoto">
@@ -52,9 +61,12 @@
           <label for="authorPhoto" class="upload-new-button block_hidden" id="uploadNew-authorPhoto" onchange="uploadImage(event, this.id)">Upload new</label>
           <span class="remove-button block_hidden" id="removeButton-authorPhoto" onclick="resetFileInput('authorPhoto', this.id)">Remove</span>
         </div>
-        <label class="post-description__label">Publish Date</label>
-        <input class="post-description__field post-description__field_white-backgound" type="date" name="publish_date"
-          id="postPublishDate" oninput="displayText('postPublishDate', 'post-publish-date')">
+        <div class="post-description__field-wrapper">
+          <label class="post-description__label">Publish Date</label>
+          <input class="post-description__field post-description__field_white-backgound" type="date" name="publish_date"
+            id="postPublishDate" oninput="displayText('postPublishDate', 'post-publish-date')">
+          <p class="field__error block_hidden" id="error-publish_date">Publish date is required</p>
+        </div>
         <div class="post_description__wrapper">
           <p class="post-description__label">Hero Image</p>
           <label class="post-description__post-image" for="postImage">
@@ -109,6 +121,7 @@
       <label class="post-content__label">Post content (plain text)</label>
       <textarea placeholder="Type anything you want ..." class="post-content__content" name="content" id="postContent"
         cols="30" rows="10"></textarea>
+      <p class="field__error block_hidden" id="error-content">Text is required</p>
     </div>
   </form>
 </body>
