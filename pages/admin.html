@@ -26,12 +26,14 @@
       </div>
       <button class="form__publish-button" type="submit">Publish</button>
     </div>
+    <div class="alert_error" id="alertError"><p class="alert__text_error">Whoops! Some fields need your attention :o</p></div>
+    <div class="alert_success" id="alertSuccess"><p class="alert__text_success">Publish Complete!</p></div>
     <div class="post-settings-wrapper">
       <h2 class="post-settings__title">Main Information</h2>
       <div class="post-description">
         <label class="post-description__label">Title</label>
         <input class="post-description__field post-description__field_white-backgound" type="text" name="title"
-          id="postTitle" oninput="displayText('postTitle', 'post-title')" required>
+          id="postTitle" oninput="displayText('postTitle', 'post-title')">
         <label class="post-description__label">Short description</label>
         <input class="post-description__field post-description__field_white-backgound" type="text" name="subtitle"
           id="postDescription" oninput="displayText('postDescription', 'post-description-text')">
@@ -41,54 +43,58 @@
         <div class="post-description__post-autor-photo-wrapper">
           <p class="post-description__label post-description__label_small-margin">Author Photo</p>
           <label for="authorPhoto">
-            <img src="/static/images/decorations/avatar-placeholder.png" class="post-description__author-photo" alt=""
-              id="placeholder-authorPhoto">
+            <div  class="post-description__author-photo" id="placeholder-authorPhoto"></div>
           </label>
           <input class="post-description_file-input" type="file" id="authorPhoto" onchange="uploadImage(event, this.id)"
-            accept=" .jpg, .jpeg, .png, .gif">
+            accept=" .jpg, .jpeg, .png">
           <input type="hidden" id="inputImage-authorPhoto" name="author_photo">
-          <label for="authorPhoto" class="upload-button">Upload</label>
+          <label for="authorPhoto" class="upload-button" id="upload-authorPhoto">Upload</label>
+          <label for="authorPhoto" class="upload-new-button block_hidden" id="uploadNew-authorPhoto" onchange="uploadImage(event, this.id)">Upload new</label>
+          <span class="remove-button block_hidden" id="removeButton-authorPhoto" onclick="resetFileInput('authorPhoto', this.id)">Remove</span>
         </div>
         <label class="post-description__label">Publish Date</label>
         <input class="post-description__field post-description__field_white-backgound" type="date" name="publish_date"
           id="postPublishDate" oninput="displayText('postPublishDate', 'post-publish-date')">
-        <p class="post-description__label">Hero Image</p>
-        <label class="post-description__post-image" for="postImage">
-          <img src="/static/images/decorations/post-img-placeholder.png" class="post-description__post-image" alt=""
-            id="placeholder-postImage">
-        </label>
-        <input class="post-description_file-input" type="file" id="postImage" onchange="uploadImage(event, this.id)"
-          accept=" .jpg, .jpeg, .png, .gif">
-        <input type="hidden" id="inputImage-postImage" name="post_image">
-        <p class="post-description__field-description">Size up to 10mb. Format: png, jpeg, gif.</p>
-        <p class="post-description__label">Hero Image</p>
-        <label class="post-description__card-image" for="cardImage">
-          <img src="/static/images/decorations/card-placeholder.png" class="post-description__card-image" alt=""
-            id="placeholder-cardImage">
-        </label>
-        <input class="post-description_file-input" type="file" onchange="uploadImage(event, this.id)" id="cardImage"
-          accept=" .jpg, .jpeg, .png, .gif">
-        <input type="hidden" id="inputImage-cardImage" name="card_image">
-        <p class="post-description__field-description">Size up to 5mb. Format: png, jpeg, gif.</p>
+        <div class="post_description__wrapper">
+          <p class="post-description__label">Hero Image</p>
+          <label class="post-description__post-image" for="postImage">
+            <div class="post-description__post-image" id="placeholder-postImage"></div>
+          </label>
+          <input class="post-description_file-input" type="file" id="postImage" onchange="uploadImage(event, this.id)"
+            accept=" .jpg, .jpeg, .png, .gif">
+          <input type="hidden" id="inputImage-postImage" name="post_image">
+          <p class="post-description__field-description" id="subdescription-postImage">Size up to 10mb. Format: png, jpeg, gif.</p>
+          <label for="postImage" class="upload-new-button block_hidden" id="uploadNew-postImage" onchange="uploadImage(event, this.id)">Upload new</label>
+          <span class="remove-button block_hidden"  id="removeButton-postImage" onclick="resetFileInput('postImage', this.id)">Remove</span>
+        </div>
+        <div class="post-description__wrapper">
+          <p class="post-description__label">Hero Image</p>
+          <label class="post-description__card-image" for="cardImage">
+            <div class="post-description__card-image" id="placeholder-cardImage"> </div>
+          </label>
+          <input class="post-description_file-input" type="file" onchange="uploadImage(event, this.id)" id="cardImage"
+            accept=" .jpg, .jpeg, .png, .gif">
+          <input type="hidden" id="inputImage-cardImage" name="card_image">
+          <p class="post-description__field-description" id="subdescription-cardImage">Size up to 5mb. Format: png, jpeg, gif.</p>
+          <label for="cardImage" class="upload-new-button block_hidden" id="uploadNew-cardImage" onchange="uploadImage(event, this.id)">Upload new</label>
+          <span class="remove-button block_hidden" id="removeButton-cardImage" onclick="resetFileInput('cardImage', this.id)">Remove</span>
+        </div>
       </div>
       <div class="post-preview">
         <p class="post-preview__label">Article preview</p>
         <div class="post-preview__post">
           <h3 class="post-preview__post-title post-title" id="previewPostTitle">New Post</h3>
           <p class="post-preview__post-subtitle post-description-text">Please, enter any description</p>
-          <img src="/static/images/decorations/post_image_preview_placeholder.png" class="post-preview__post-image"
-            id="preview-postImage">
+          <div class="post-preview__post-image" id="preview-postImage"></div>
         </div>
         <p class="post-preview__label">Post card preview</p>
         <div class=" post-preview__card">
           <div class="card card_small">
-            <img src="/static/images/decorations/card_preview_placeholder.png" class="card__image"
-              id="preview-cardImage">
+            <div class="card__image" id="preview-cardImage"></div>
             <h3 class="card__title card__title_small post-title">New Post</h3>
             <p class="card__subtitle card__subtitle_small post-description-text">Please, enter any description</p>
             <div class="card__signature card__signature_small">
-              <img src="/static/images/decorations/author_photo_placeholder.png" class="card__author-image"
-                id="preview-authorPhoto">
+              <div class="card__author-image" id="preview-authorPhoto"></div>
               <span class="card__author-name card__author-name_small post-author">Enter author name</span>
               <span class="card__date card__date_small post-publish-date">4/19/2023</span>
             </div>
