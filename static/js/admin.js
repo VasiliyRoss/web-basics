@@ -7,17 +7,6 @@ function displayText(inputId, displayClass) {
   }
 }
 
-/*document.getElementById('toggleButton').addEventListener('click', function() {
-  var block = document.getElementById('alertSuccess');
-  if (block.classList.contains('show')) {
-    block.classList.remove('show');
-    block.classList.add('hide');
-  } else {
-    block.classList.remove('hide');
-    block.classList.add('show');
-  }
-});*/
-
 function resetFileInput(id, buttonId) {
   document.getElementById(id).value = null;
   document.getElementById('placeholder-' + id).style.backgroundImage = 'url(/static/images/decorations/placeholder-' + id + '.png)';
@@ -77,6 +66,8 @@ var form = document.getElementById('form');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  var alertError = document.getElementById('alertError');
+  var alertSuccess = document.getElementById('alertSuccess');
 
   var formData = new FormData(form);
   var formValues = {};
@@ -92,19 +83,36 @@ form.addEventListener('submit', async (e) => {
     return newDate;
   }
 
+  var hasEmptyFields = false;
   for (var pair of formData.entries()) {
+    if (!pair[1]) {
+      hasEmptyFields = true;
+      break;
+    }
     if (pair[0] === "publish_date") {
       formValues[pair[0]] = convertDateFormat(pair[1]);
     } else {
       formValues[pair[0]] = pair[1];
+    }    
+  }
+
+  if (hasEmptyFields) {
+    alertError.classList.add('show');
+    alertSuccess.classList.remove('show');
+  } else {
+    const response = await fetch('/api/post', {
+      method: 'POST',
+      body: JSON.stringify(formValues)
+    });
+
+    if (response.ok) {
+      alertError.classList.remove('show');
+      alertSuccess.classList.add('show');
+    } else {
+      alertError.classList.add('show');
+      alertSuccess.classList.remove('show');
     }
   }
 
-  const respose = await fetch('/api/post', {
-    method: 'POST',
-    body: JSON.stringify(formValues)
-  })
-
   console.log(JSON.stringify(formValues));
-  console.log(respose.ok);
-})
+});

@@ -61,16 +61,6 @@
     }
 }
 
-@keyframes hideBlock
-{
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-}
-
 .alert_error
 {
     background: #FFEBEA;
@@ -86,13 +76,6 @@
     animation-name: showBlock;
     animation-duration: 0.3s;
     animation-timing-function: ease-out;
-}
-
-.alert_error.hide .alert_success.hide
-{
-    animation-name: hideBlock;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in;
 }
 
 .alert_success
