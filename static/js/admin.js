@@ -7,6 +7,17 @@ function displayText(inputId, displayClass) {
   }
 }
 
+function convertDateFormat(inputDate) {
+  var parts = inputDate.split('-');
+  var year = parts[0];
+  var month = parts[1];
+  var day = parts[2];
+
+  var newDate = month + '/' + day + '/' + year;
+
+  return newDate;
+}
+
 function uploadImage(event, id) {
   var input = event.target;
   var reader = new FileReader();
@@ -34,7 +45,12 @@ form.addEventListener('submit', async (e) => {
   var formValues = {};
 
   for (var pair of formData.entries()) {
-    formValues[pair[0]] = pair[1];
+    console.log(pair[0]);
+    if (pair[0] === "publish_date") {
+      formValues[pair[0]] = convertDateFormat(pair[1]);
+    } else {
+      formValues[pair[0]] = pair[1];
+    }
   }
 
   const respose = await fetch('/api/post', {

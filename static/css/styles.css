@@ -111,8 +111,13 @@
     max-width: 940px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-self: center;
+    gap: 1rem;
+}
+
+.section_space-between
+{
+    justify-content: space-between;
 }
 
 .title
@@ -236,10 +241,10 @@
 
 .card_small
 {
-    width: 296px;
+    width: 302px;
+    height: 300px;
     margin: 0 0 20px 0;
     padding: 0;
-    height: auto;
     background: #FFF;
     justify-content: flex-start;
 }
