@@ -1,3 +1,13 @@
+function convertDateFormat(inputDate) {
+  var parts = inputDate.split('-');
+  var year = parts[0];
+  var month = parts[1];
+  var day = parts[2];
+  var newDate = month + '/' + day + '/' + year;
+
+  return newDate;
+}
+
 function displayText(inputId, displayClass, defaultText) {
   var inputText = document.getElementById(inputId).value;
   var displayElements = document.getElementsByClassName(displayClass);
@@ -6,12 +16,16 @@ function displayText(inputId, displayClass, defaultText) {
   
   for (var i = 0; i < displayElements.length; i++) {
     if (inputText !== '') {
-      displayElements[i].textContent = inputText;
       inputElement.classList.remove('post-description__field_error');
       errorMessage.classList.add('block_hidden');
+      if (inputId === 'postPublishDate') {
+        displayElements[i].textContent = convertDateFormat(inputText);
+      } else {
+        displayElements[i].textContent = inputText;
+      }
     } else if (defaultText) {
       displayElements[i].textContent = defaultText;
-    }
+    } 
   }
 }
 
@@ -144,7 +158,6 @@ form.addEventListener('submit', async (e) => {
     var year = parts[0];
     var month = parts[1];
     var day = parts[2];
-  
     var newDate = month + '/' + day + '/' + year;
   
     return newDate;
