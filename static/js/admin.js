@@ -89,11 +89,15 @@ form.addEventListener('submit', async (e) => {
     errorMessages[i].classList.add('block_hidden');
   }
 
+  function cutBase64Prefix(item) {
+    
+  }
+
   for (var pair of formData.entries()) {
     var inputField = form.querySelector(`[name="${pair[0]}"]`);
     var error = document.getElementById('error-' + pair[0]);
     if (!pair[1]) {
-      if (document.getElementById('error-' + pair[0])){
+      if (error){
         error.classList.remove('block_hidden')
         inputField.classList.add('post-description__field_error');
       }
@@ -101,6 +105,8 @@ form.addEventListener('submit', async (e) => {
     }
     if (pair[0] === "publish_date") {
       formValues[pair[0]] = convertDateFormat(pair[1]);
+    } else if (pair[0] === "author_photo" || pair[0] === "post_image" || pair[0] === "card_image") {
+
     } else {
       formValues[pair[0]] = pair[1];
     }    
@@ -126,3 +132,10 @@ form.addEventListener('submit', async (e) => {
 
   console.log(JSON.stringify(formValues));
 });
+
+
+/*
+
+#реализовать отсекание зашифрованной картинки в JSON
+#поправить форматирование mysql в admin.go
+#вызов функций сделать в admin.js*/

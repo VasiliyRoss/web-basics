@@ -127,7 +127,6 @@ func savePost(db *sqlx.DB, req createPostRequest) error {
 }
 
 func saveImageToFile(filePath, base64String string) error {
-
 	base64Image := strings.Split(base64String, ",")[1]
 
 	img, err := base64.StdEncoding.DecodeString(base64Image)

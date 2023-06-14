@@ -26,40 +26,48 @@
       </div>
       <button class="form__publish-button" type="submit">Publish</button>
     </div>
-    <div class="alert_error" id="alertError"><p class="alert__text_error">Whoops! Some fields need your attention :o</p></div>
-    <div class="alert_success" id="alertSuccess"><p class="alert__text_success">Publish Complete!</p></div>
+    <div class="alert_error" id="alertError">
+      <p class="alert__text_error">Whoops! Some fields need your attention :o</p>
+    </div>
+    <div class="alert_success" id="alertSuccess">
+      <p class="alert__text_success">Publish Complete!</p>
+    </div>
     <div class="post-settings-wrapper">
       <h2 class="post-settings__title">Main Information</h2>
       <div class="post-description">
         <div class="post-description__field-wrapper">
           <label class="post-description__label">Title</label>
-          <input class="post-description__field post-description__field_white-backgound" type="text" name="title"
+          <input placeholder="Type anything you want ..."
+            class="post-description__field post-description__field_white-backgound" type="text" name="title"
             id="postTitle" oninput="displayText('postTitle', 'post-title')">
           <p class="field__error block_hidden" id="error-title">Title is required</p>
         </div>
         <div class="post-description__field-wrapper">
           <label class="post-description__label">Short description</label>
           <input class="post-description__field post-description__field_white-backgound" type="text" name="subtitle"
-            id="postDescription" oninput="displayText('postDescription', 'post-description-text')">
+            id="postDescription" placeholder="Type anything you want ..."
+            oninput="displayText('postDescription', 'post-description-text')">
           <p class="field__error block_hidden" id="error-subtitle">Descriprion is required</p>
         </div>
         <div class="post-description__field-wrapper">
           <label class="post-description__label">Author Name</label>
           <input class="post-description__field post-description__field_white-backgound" type="text" name="author"
-            id="postAuthor" oninput="displayText('postAuthor', 'post-author')">
+            id="postAuthor" placeholder="Type anything you want ..." oninput="displayText('postAuthor', 'post-author')">
           <p class="field__error block_hidden" id="error-author">Author name is required</p>
         </div>
         <div class="post-description__post-autor-photo-wrapper">
           <p class="post-description__label post-description__label_small-margin">Author Photo</p>
           <label for="authorPhoto">
-            <div  class="post-description__author-photo" id="placeholder-authorPhoto"></div>
+            <div class="post-description__author-photo" id="placeholder-authorPhoto"></div>
           </label>
           <input class="post-description_file-input" type="file" id="authorPhoto" onchange="uploadImage(event, this.id)"
             accept=" .jpg, .jpeg, .png">
           <input type="hidden" id="inputImage-authorPhoto" name="author_photo">
           <label for="authorPhoto" class="upload-button" id="upload-authorPhoto">Upload</label>
-          <label for="authorPhoto" class="upload-new-button block_hidden" id="uploadNew-authorPhoto" onchange="uploadImage(event, this.id)">Upload new</label>
-          <span class="remove-button block_hidden" id="removeButton-authorPhoto" onclick="resetFileInput('authorPhoto', this.id)">Remove</span>
+          <label for="authorPhoto" class="upload-new-button block_hidden" id="uploadNew-authorPhoto"
+            onchange="uploadImage(event, this.id)">Upload new</label>
+          <span class="remove-button block_hidden" id="removeButton-authorPhoto"
+            onclick="resetFileInput('authorPhoto', this.id)">Remove</span>
         </div>
         <div class="post-description__field-wrapper">
           <label class="post-description__label">Publish Date</label>
@@ -75,9 +83,12 @@
           <input class="post-description_file-input" type="file" id="postImage" onchange="uploadImage(event, this.id)"
             accept=" .jpg, .jpeg, .png, .gif">
           <input type="hidden" id="inputImage-postImage" name="post_image">
-          <p class="post-description__field-description" id="subdescription-postImage">Size up to 10mb. Format: png, jpeg, gif.</p>
-          <label for="postImage" class="upload-new-button block_hidden" id="uploadNew-postImage" onchange="uploadImage(event, this.id)">Upload new</label>
-          <span class="remove-button block_hidden"  id="removeButton-postImage" onclick="resetFileInput('postImage', this.id)">Remove</span>
+          <p class="post-description__field-description" id="subdescription-postImage">Size up to 10mb. Format: png,
+            jpeg, gif.</p>
+          <label for="postImage" class="upload-new-button block_hidden" id="uploadNew-postImage"
+            onchange="uploadImage(event, this.id)">Upload new</label>
+          <span class="remove-button block_hidden" id="removeButton-postImage"
+            onclick="resetFileInput('postImage', this.id)">Remove</span>
         </div>
         <div class="post-description__wrapper">
           <p class="post-description__label">Hero Image</p>
@@ -87,9 +98,12 @@
           <input class="post-description_file-input" type="file" onchange="uploadImage(event, this.id)" id="cardImage"
             accept=" .jpg, .jpeg, .png, .gif">
           <input type="hidden" id="inputImage-cardImage" name="card_image">
-          <p class="post-description__field-description" id="subdescription-cardImage">Size up to 5mb. Format: png, jpeg, gif.</p>
-          <label for="cardImage" class="upload-new-button block_hidden" id="uploadNew-cardImage" onchange="uploadImage(event, this.id)">Upload new</label>
-          <span class="remove-button block_hidden" id="removeButton-cardImage" onclick="resetFileInput('cardImage', this.id)">Remove</span>
+          <p class="post-description__field-description" id="subdescription-cardImage">Size up to 5mb. Format: png,
+            jpeg, gif.</p>
+          <label for="cardImage" class="upload-new-button block_hidden" id="uploadNew-cardImage"
+            onchange="uploadImage(event, this.id)">Upload new</label>
+          <span class="remove-button block_hidden" id="removeButton-cardImage"
+            onclick="resetFileInput('cardImage', this.id)">Remove</span>
         </div>
       </div>
       <div class="post-preview">
