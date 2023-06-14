@@ -1,14 +1,32 @@
-function displayText(inputId, displayClass) {
+function displayText(inputId, displayClass, defaultText) {
   var inputText = document.getElementById(inputId).value;
   var displayElements = document.getElementsByClassName(displayClass);
   
   for (var i = 0; i < displayElements.length; i++) {
-    displayElements[i].textContent = inputText;
+    if (inputText !== '') {
+      displayElements[i].textContent = inputText;
+    } else {
+      displayElements[i].textContent = defaultText;
+    }
   }
 }
 
-/*var postTitle = document.getElementById('postTitle');
-postTitle.addEventListener('input', displayText('postTitle', 'post-title'))*/
+function attachInputEventToElements(inputFieldIds, placeholderClasses, defaultTexts) {
+  for (var i = 0; i < inputFieldIds.length; i++) {
+    (function(index) {
+      var element = document.getElementById(inputFieldIds[index]);
+      element.addEventListener('input', function() {
+        displayText(inputFieldIds[index], placeholderClasses[index], defaultTexts[index]);
+      });
+    })(i);
+  }
+}
+
+var inputFieldIds = ['postTitle', 'postDescription', 'postAuthor', 'postPublishDate'];
+var placeholderClasses = ['post-title', 'post-description-text', 'post-author', 'post-publish-date'];
+var defaultTexts = ['New Title', 'Please, enter any description', 'Enter author name', '4/19/2023'];
+
+attachInputEventToElements(inputFieldIds, placeholderClasses, defaultTexts);
 
 function resetFileInput(id, buttonId) {
   document.getElementById(id).value = null;
@@ -30,6 +48,22 @@ function resetFileInput(id, buttonId) {
   var uploadNew = document.getElementById('uploadNew-' + id)
   uploadNew.classList.add('block_hidden')
 }
+
+var removeButtons = ['removeButton-authorPhoto', 'removeButton-postImage', 'removeButton-cardImage'];
+var imageInputIds = ['authorPhoto', 'postImage', 'cardImage'];
+
+function attachClickEventToElements(imageInputIds, removeButtons) {
+  for (var i = 0; i < removeButtons.length; i++) {
+    (function(index) {
+      var element = document.getElementById(removeButtons[index]);
+      element.addEventListener('click', function() {
+        resetFileInput(imageInputIds[index], removeButtons[index]);
+      });
+    })(i);
+  }
+}
+
+attachClickEventToElements(imageInputIds, removeButtons)
 
 function uploadImage(event, id) {
   var input = event.target;
@@ -64,6 +98,21 @@ function uploadImage(event, id) {
 
   reader.readAsDataURL(input.files[0]);
 }
+
+var uploadButtonsIds = ['authorPhoto', 'uploadNew-authorPhoto', 'postImage', 'uploadNew-postImage', 'cardImage', 'uploadNew-cardImage'];
+
+function attachUploadEventToElements(ids) {
+  for (var i = 0; i < ids.length; i++) {
+    (function(index) {
+      var element = document.getElementById(ids[index]);
+      element.addEventListener('change', function() {
+        uploadImage(event, ids[index]);
+      });
+    })(i);
+  }
+}
+
+attachUploadEventToElements(uploadButtonsIds)
 
 var form = document.getElementById('form');
 
@@ -142,4 +191,5 @@ form.addEventListener('submit', async (e) => {
 
 
 /*
-#вызов функций сделать в admin.js*/
+#вызов функций сделать в admin.js
+убирать ошибки не при проверке формы, а после нажатия на поле*/
