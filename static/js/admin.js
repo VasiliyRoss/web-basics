@@ -77,7 +77,12 @@ attachClickEventToElements(imageInputIds, removeButtons)
 
 function uploadImage(event, id) {
   var input = event.target;
+  var errorMessage = document.getElementById(id).nextElementSibling
   var reader = new FileReader();
+
+  if(errorMessage) {
+    errorMessage.classList.add('block_hidden')
+  }
 
   reader.onload = function () {
     var placeholderImage = document.getElementById('placeholder-' + id);

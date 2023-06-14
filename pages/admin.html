@@ -60,13 +60,13 @@
           <label for="authorPhoto">
             <div class="post-description__author-photo" id="placeholder-authorPhoto"></div>
           </label>
-          <input class="post-description_file-input" type="file" id="authorPhoto"
-            accept=" .jpg, .jpeg, .png">
-          <input type="hidden" id="inputImage-authorPhoto" name="author_photo">
           <label for="authorPhoto" class="upload-button" id="upload-authorPhoto">Upload</label>
           <label for="authorPhoto" class="upload-new-button block_hidden" id="uploadNew-authorPhoto">Upload new</label>
           <span class="remove-button block_hidden" id="removeButton-authorPhoto">Remove</span>
-          <p class="field__error block_hidden" id="error-author_photo">Author photo is required</p>
+          <input class="post-description_file-input" type="file" id="authorPhoto"
+          accept=" .jpg, .jpeg, .png">
+          <p class="field__error block_hidden" id="error-author_photo">Author photo is required</p> 
+          <input type="hidden" id="inputImage-authorPhoto" name="author_photo">
         </div>
         <div class="post-description__field-wrapper">
           <label class="post-description__label">Publish Date</label>
@@ -80,10 +80,11 @@
             <div class="post-description__post-image" id="placeholder-postImage"></div>
           </label>
           <input class="post-description_file-input" type="file" id="postImage" accept=" .jpg, .jpeg, .png, .gif">
+          <p class="field__error block_hidden" id="error-post_image">Post image is required</p>
           <input type="hidden" id="inputImage-postImage" name="post_image">
           <p class="post-description__field-description" id="subdescription-postImage">Size up to 10mb. Format: png,
             jpeg, gif.</p>
-          <p class="field__error block_hidden" id="error-post_image">Post image is required</p>
+          
           <label for="postImage" class="upload-new-button block_hidden" id="uploadNew-postImage">Upload new</label>
           <span class="remove-button block_hidden" id="removeButton-postImage">Remove</span>
         </div>
@@ -94,9 +95,10 @@
           </label>
           <input class="post-description_file-input" type="file" id="cardImage"
             accept=" .jpg, .jpeg, .png, .gif">
+          <p class="field__error block_hidden" id="error-card_image">Card image is required</p>
           <input type="hidden" id="inputImage-cardImage" name="card_image">
           <p class="post-description__field-description" id="subdescription-cardImage">Size up to 5mb. Format: png, jpeg, gif.</p>
-          <p class="field__error block_hidden" id="error-card_image">Card image is required</p>
+          
           <label for="cardImage" class="upload-new-button block_hidden" id="uploadNew-cardImage">Upload new</label>
           <span class="remove-button block_hidden" id="removeButton-cardImage">Remove</span>
         </div>
