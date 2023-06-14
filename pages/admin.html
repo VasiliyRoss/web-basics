@@ -59,12 +59,11 @@
           <label for="authorPhoto">
             <div class="post-description__author-photo" id="placeholder-authorPhoto"></div>
           </label>
-          <input class="post-description_file-input" type="file" id="authorPhoto" onchange="uploadImage(event, this.id)"
+          <input class="post-description_file-input" type="file" id="authorPhoto"
             accept=" .jpg, .jpeg, .png">
           <input type="hidden" id="inputImage-authorPhoto" name="author_photo">
           <label for="authorPhoto" class="upload-button" id="upload-authorPhoto">Upload</label>
-          <label for="authorPhoto" class="upload-new-button block_hidden" id="uploadNew-authorPhoto"
-            onchange="uploadImage(event, this.id)">Upload new</label>
+          <label for="authorPhoto" class="upload-new-button block_hidden" id="uploadNew-authorPhoto">Upload new</label>
           <span class="remove-button block_hidden" id="removeButton-authorPhoto">Remove</span>
         </div>
         <div class="post-description__field-wrapper">
@@ -78,13 +77,11 @@
           <label class="post-description__post-image" for="postImage">
             <div class="post-description__post-image" id="placeholder-postImage"></div>
           </label>
-          <input class="post-description_file-input" type="file" id="postImage" onchange="uploadImage(event, this.id)"
-            accept=" .jpg, .jpeg, .png, .gif">
+          <input class="post-description_file-input" type="file" id="postImage" accept=" .jpg, .jpeg, .png, .gif">
           <input type="hidden" id="inputImage-postImage" name="post_image">
           <p class="post-description__field-description" id="subdescription-postImage">Size up to 10mb. Format: png,
             jpeg, gif.</p>
-          <label for="postImage" class="upload-new-button block_hidden" id="uploadNew-postImage"
-            onchange="uploadImage(event, this.id)">Upload new</label>
+          <label for="postImage" class="upload-new-button block_hidden" id="uploadNew-postImage">Upload new</label>
           <span class="remove-button block_hidden" id="removeButton-postImage">Remove</span>
         </div>
         <div class="post-description__wrapper">
@@ -92,13 +89,11 @@
           <label class="post-description__card-image" for="cardImage">
             <div class="post-description__card-image" id="placeholder-cardImage"> </div>
           </label>
-          <input class="post-description_file-input" type="file" onchange="uploadImage(event, this.id)" id="cardImage"
+          <input class="post-description_file-input" type="file" id="cardImage"
             accept=" .jpg, .jpeg, .png, .gif">
           <input type="hidden" id="inputImage-cardImage" name="card_image">
-          <p class="post-description__field-description" id="subdescription-cardImage">Size up to 5mb. Format: png,
-            jpeg, gif.</p>
-          <label for="cardImage" class="upload-new-button block_hidden" id="uploadNew-cardImage"
-            onchange="uploadImage(event, this.id)">Upload new</label>
+          <p class="post-description__field-description" id="subdescription-cardImage">Size up to 5mb. Format: png, jpeg, gif.</p>
+          <label for="cardImage" class="upload-new-button block_hidden" id="uploadNew-cardImage">Upload new</label>
           <span class="remove-button block_hidden" id="removeButton-cardImage">Remove</span>
         </div>
       </div>
