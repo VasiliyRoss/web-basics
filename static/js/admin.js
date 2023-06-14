@@ -7,6 +7,9 @@ function displayText(inputId, displayClass) {
   }
 }
 
+/*var postTitle = document.getElementById('postTitle');
+postTitle.addEventListener('input', displayText('postTitle', 'post-title'))*/
+
 function resetFileInput(id, buttonId) {
   document.getElementById(id).value = null;
   document.getElementById('placeholder-' + id).style.backgroundImage = 'url(/static/images/decorations/placeholder-' + id + '.png)';
@@ -89,24 +92,28 @@ form.addEventListener('submit', async (e) => {
     errorMessages[i].classList.add('block_hidden');
   }
 
-  function cutBase64Prefix(item) {
-    
+  function cutBase64Prefix(base64string) {
+    const commaIndex = base64string.indexOf(',');
+    const result = base64string.substring(commaIndex + 1);
+    return result    
   }
 
   for (var pair of formData.entries()) {
     var inputField = form.querySelector(`[name="${pair[0]}"]`);
     var error = document.getElementById('error-' + pair[0]);
+
     if (!pair[1]) {
-      if (error){
+      if (error) {
         error.classList.remove('block_hidden')
         inputField.classList.add('post-description__field_error');
       }
       hasEmptyFields = true;
     }
+
     if (pair[0] === "publish_date") {
       formValues[pair[0]] = convertDateFormat(pair[1]);
     } else if (pair[0] === "author_photo" || pair[0] === "post_image" || pair[0] === "card_image") {
-
+      formValues[pair[0]] = cutBase64Prefix(pair[1])
     } else {
       formValues[pair[0]] = pair[1];
     }    
@@ -135,7 +142,4 @@ form.addEventListener('submit', async (e) => {
 
 
 /*
-
-#реализовать отсекание зашифрованной картинки в JSON
-#поправить форматирование mysql в admin.go
 #вызов функций сделать в admin.js*/

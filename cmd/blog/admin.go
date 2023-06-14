@@ -9,7 +9,6 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
-	"strings"
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -77,8 +76,7 @@ func createPost(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 func savePost(db *sqlx.DB, req createPostRequest) error {
 
 	const query = `
-	INSERT INTO
-		post
+	INSERT INTO post
 	(
 		title,
 		subtitle,
@@ -88,9 +86,7 @@ func savePost(db *sqlx.DB, req createPostRequest) error {
 		card_image_url,
 		post_image_url,
 		content
-	)
-	VALUES
-	(
+	)   VALUES	(
 		?,
 		?,
 		?,
@@ -99,8 +95,8 @@ func savePost(db *sqlx.DB, req createPostRequest) error {
 		?,
 		?,
 		?
-	)
-	`
+	)`
+
 	postID := generateID(10)
 
 	var authorImgUrl = "static/images/avatars/" + postID + ".png"
@@ -127,9 +123,7 @@ func savePost(db *sqlx.DB, req createPostRequest) error {
 }
 
 func saveImageToFile(filePath, base64String string) error {
-	base64Image := strings.Split(base64String, ",")[1]
-
-	img, err := base64.StdEncoding.DecodeString(base64Image)
+	img, err := base64.StdEncoding.DecodeString(base64String)
 	if err != nil {
 		return err
 	}
