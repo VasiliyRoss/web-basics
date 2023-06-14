@@ -17,12 +17,24 @@
         <img class="logo" src="/static/images/logo/admin-logo.png" alt="Escape">
         <p class="logo-subtitle">Log in to start creating</p>
       </div>
-      <form class="form" action="#" method="post">
+      <form class="form" action="#" method="post" id="form">
         <h1 class="form__header">Log In</h1>
-        <p class="form__field-label">Email</p>
-        <input class="form__field" type="email" name="" id="">
-        <p class="form__field-label">Password</p>
-        <input class="form__field form__field_password" type="password" name="" id="">
+        <div class="alert_error" id="alertFieldError">
+          <p class="alert__text_error">A-Ah! Check all fields.</p>
+        </div>
+        <div class="alert_error" id="alertErrorInvalidUser">
+          <p class="alert__text_error">Email or password is incorrect.</p>
+        </div>
+        <div class="field-wrapper">
+          <p class="form__field-label">Email</p>
+          <input class="form__field" type="text" name="user_email" id="userEmailInput">
+          <p class="field__error block_hidden" id="error-user_email"></p>
+        </div>
+        <div class="field-wrapper">
+          <p class="form__field-label">Password</p>
+          <input class="form__field form__field_password" type="password" name="user_password" id="userPasswordInput">
+          <p class="field__error block_hidden" id="error-user_password"></p>
+        </div>
         <button class="form__button" type="submit">Log in</button>
       </form>
     </div>

@@ -77,9 +77,15 @@
 .form__field
 {
   height: 40px;
-  margin-bottom: 40px;
+  width: 100%;
+  padding-left: 4px;
   border-width: 0 0 1px 0;
   border-color: #EAEAEA;
+}
+
+.field-wrapper
+{
+  margin-bottom: 40px;
 }
 
 .form__field_password
@@ -111,3 +117,63 @@
   
 }
 
+@keyframes showBlock 
+{
+    0% {
+      height: 0;
+      opacity: 0;
+      margin: 0;
+    }
+    100% {
+      height: 44px;
+      opacity: 1;
+    }
+}
+
+.alert_error
+{
+    background: #FFEBEA;
+    border-left: 2px solid #E86961;
+    border-radius: 5px;
+    margin: 0 0 16px 0;
+    display: none;
+}
+
+.alert_error.show
+{
+    display: block;
+    animation-name: showBlock;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+}
+
+.alert__text_error, .alert__text_success
+{
+    position: relative;
+    font: 14px/1.43 'Oxygen', sans-serif;
+    color: #2E2E2E;
+    padding: 11px 0 13px 46px;
+}
+
+.alert__text_error::before
+{
+    position: absolute;
+    content: url(/static/images/decorations/alert-circle.png);
+    left: 12px;
+}
+
+.block_hidden
+{
+    display: none;
+}
+
+.form__field_error
+{
+    border-bottom: 1px solid #E86961;
+}
+
+.field__error
+{
+    font: 12px/1.33 'Oxygen', sans-serif;
+    color: #E86961;
+}

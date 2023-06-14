@@ -1,11 +1,15 @@
 function displayText(inputId, displayClass, defaultText) {
   var inputText = document.getElementById(inputId).value;
   var displayElements = document.getElementsByClassName(displayClass);
+  var inputElement = document.getElementById(inputId);
+  var errorMessage = inputElement.nextElementSibling; 
   
   for (var i = 0; i < displayElements.length; i++) {
     if (inputText !== '') {
       displayElements[i].textContent = inputText;
-    } else {
+      inputElement.classList.remove('post-description__field_error');
+      errorMessage.classList.add('block_hidden');
+    } else if (defaultText) {
       displayElements[i].textContent = defaultText;
     }
   }
@@ -27,6 +31,12 @@ var placeholderClasses = ['post-title', 'post-description-text', 'post-author', 
 var defaultTexts = ['New Title', 'Please, enter any description', 'Enter author name', '4/19/2023'];
 
 attachInputEventToElements(inputFieldIds, placeholderClasses, defaultTexts);
+
+var formContent = document.getElementById('postContent');
+formContent.addEventListener('input', function() {
+  var errorMessage = formContent.nextElementSibling;
+  errorMessage.classList.add('block_hidden');
+})
 
 function resetFileInput(id, buttonId) {
   document.getElementById(id).value = null;
@@ -120,7 +130,6 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   var alertError = document.getElementById('alertError');
   var alertSuccess = document.getElementById('alertSuccess');
-  var errorMessages = document.getElementsByClassName('field__error');
 
   var formData = new FormData(form);
   var formValues = {};
@@ -137,9 +146,6 @@ form.addEventListener('submit', async (e) => {
   }
 
   var hasEmptyFields = false;
-  for (var i = 0; i < errorMessages.length; i++) {
-    errorMessages[i].classList.add('block_hidden');
-  }
 
   function cutBase64Prefix(base64string) {
     const commaIndex = base64string.indexOf(',');
@@ -188,8 +194,3 @@ form.addEventListener('submit', async (e) => {
 
   console.log(JSON.stringify(formValues));
 });
-
-
-/*
-#вызов функций сделать в admin.js
-убирать ошибки не при проверке формы, а после нажатия на поле*/

@@ -1,352 +1,309 @@
-*
-{
+/* Общие стили */
+
+* {
     padding: 0;
     margin: 0;
-}
-
-.top-block
-{
-    background: #000 url(/static/images/backgrounds/top_block_background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 160px 0;
-}
-
-.menu
-{
-    display: flex;
-    justify-content: space-around;
-}
-
-.menu_with-custom-padding
-{
-    padding: 20px 0 131px 0;
-}
-
-.navigation
-{
-    display: flex;
-    font: 12px/1.67 'Oxygen', sans-serif;
-    justify-content: space-between;
-    min-width: 20%;
-    text-transform: uppercase;
-}
-
-.navigation__link
-{
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Oxygen', sans-serif;
+  }
+  
+  a {
     text-decoration: none;
-    color: #FFF;
-    margin: 0 20px 0 0;
-}
-
-.navigation__link_black
-{
-    color: #000;
-}
-
-.top-block__title
-{
-    font: 50px/1.02 'Lora', serif;
-    letter-spacing: 2px;
-    color: #FFF;
-    align-self: center;
-    margin: 0 0 20px 0;
-}
-
-.top-block__subtitle
-{
-    font: 17px/1.18 'Oxygen', sans-serif;
-    color: rgba(255, 255, 255, 0.63);
-    align-self: center;
-    margin: 0 0 31px 0;
-}
-
-.button
-{
-    width: 167px;
-    height: 44px;
-    border-radius: 3px;
-    border-width: 0;
-    cursor: pointer;
-}
-
-.top-block__button
-{
-    background: #DD783F;
-    color: #fff;
-    font: 13px/1.54 'Oxygen', sans-serif;
-    align-self: center;
-}
-
-.section-container
-{
-    padding: 81px 0 48px;
-    display: flex;
-    flex-direction: column;
-    background: #F7F7F7;
-}
-
-.navigation_standalone
-{
-    max-width: 55%;
-    font: 14px/1.43 'Lora', serif;
-    display: flex;
-    justify-content: space-between;;
-    background-color: #FFF;
-    text-transform: none;
-    letter-spacing: 0;
-    margin: 20px auto;
-}
-
-.navigation__link_grey
-{
-    color: #768088;
-}
-
-.section
-{
-    padding: 0 0 60px 0;
-    max-width: 940px;
-    display: flex;
-    flex-wrap: wrap;
-    align-self: center;
-    gap: 1rem;
-}
-
-.section_space-between
-{
-    justify-content: space-between;
-}
-
-.title
-{
-    font: 20px/1.35 'Oxygen', sans-serif;
-    letter-spacing: 2px;
-    color: #2E2E2E;
-    position: relative;
-    display: flex;
-    width: 100%;
-    padding: 0 0 40px 0;
-    justify-content: center;
-}
-
-.title::before
-{
-    position: absolute;
-    content: url(/static/images/decorations/header_underline.svg);
-    top: 16px;
-}
-
-.card__label
-{
-    position: absolute;
-    background-color: #DD783F;
-    font: 13px/1.08 'Oxygen', sans-serif;
-    color: #FFF;
-    text-transform: uppercase;
-    top: 20px;
-    left: 20px;
-    border-radius: 2px;
-    display: flex;
-    align-items :center;
-    justify-content: center;
-    width: 100px;
-    height: 26px;
-}
-
-.card__hyperlink
-{
-    text-decoration: none;
-}
-
-.card__label_hidden 
-{
-    display: none;
-}
-
-.card
-{
-    height: 240px;
-    width: 420px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    border-radius: 3px;
-    position: relative;
-    background-size: cover;
-    cursor: pointer;
-}
-
-.card__image 
-{
-    height: 150px;
-}
-
-.card__title
-{
-    font: 27px/1.11 'Lora', serif;
-    color: #FFF;
-}
-
-.card__subtitle
-{
-    font: 14px/1.79 'Oxygen', sans-serif;
-    color: rgba(255, 255, 255, 0.7);
-    padding: 0 0 15px;
-}
-
-.card__signature
-{
-    display: flex;
-    align-items: center;
-}
-
-.card__author-name, .card__date
-{
-    font: 12px/2.92 'Oxygen', sans-serif;
-    color: rgba(255, 255, 255, 0.7);
-    margin-left: 10px;
-}
-
-.card__date 
-{
-  font: 12px/2.92 'Oxygen', sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  margin-left: auto;
-}
-
-.card__title_small
-{
-    color: #101315;
-    font-size: 16px;
-    line-height: 21px;
-    margin: 14px 13px 7px;
-}
-
-.card__subtitle_small
-{
-    font-size: 13px;
-    line-height: 19px;
-    color: #7A7A7A;
-    padding: 0 13px 12px;
-}
-
-.card__author-name_small, .card__date_small
-{
-    color: #999;
-}
-
-.card_small
-{
-    width: 302px;
-    height: 300px;
-    padding: 0;
-    background: #FFF;
-    justify-content: flex-start;
-}
-
-.card__signature_small
-{
-    padding: 12px 13px 10px;
-    border-top: 2px solid #EFEFEF;
-    margin-top: auto;
-}
-
-.footer
-{
-    background-size: cover;
-    background-image: url(/static/images/backgrounds/footer_background.png);
-    padding: 81px 0 0 0;
-    display: flex;
-    flex-direction: column;
-} 
-
-.footer__menu
-{
-    background: rgba(35, 47, 56, 0.6);
-    padding: 30px 0;
-}
-
-.title_white
-{ 
-    line-height: 30px;
-    text-align: center;
-    color: #EFEFEF;
-}
-
-.form {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    padding: 0 0 90px 0;
-    align-items: baseline;
-}
-
-.form__field
-{
-    height: 50px;
-    width: 375px;
-    padding: 0 0 0 35px;
-    background: #FFFFFF;
-    border-radius: 3px 0px 0px 3px;
-    border-width: 0;
-}
-
-.form__button
-{
-    width: 125px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.28);
-    border-radius: 0px 3px 3px 0px;
-    color: #FFF;
-}
-
-.navigation__link_footer
-{
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.article__title
-{
-    font: 50px/1.02 'Lora', serif;
-    letter-spacing: 2px;
-    color: #000;
-    text-align: center;
-    padding: 0 0 20px 0;
-}
-
-.article__subtitle
-{
-    font: 17px/1.18 'Oxygen', sans-serif;
-    text-align: center;
-    color: rgba(46, 46, 46, 0.63);
-    padding: 0 0 110px 0;
-}
-
-.article__image
-{
-    width: 100%;
-    height: 534px;
-    background-size: cover;
-
-}
-
-.article__text-container
-{
-    max-width: 66%;
-    margin: 140px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.article__text
-{
-    padding: 0 0 40px 0;
-    font: 24px/1.46 'Oxygen', sans-serif;  
-    color: #101315;
-    white-space: pre-wrap;
-}
+    color: inherit;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Стили для размера экрана минимум 480px */
+  
+  @media screen and (min-width: 480px) {
+    .top-block {
+      padding: 0 0 120px;
+    }
+  
+    .menu_with-custom-padding {
+      padding: 10px 0 91px;
+    }
+  
+    .top-block__title {
+      font-size: 40px;
+    }
+  
+    .top-block__subtitle {
+      font-size: 15px;
+      margin: 0 0 21px;
+    }
+  
+    .button.top-block__button {
+      width: 150px;
+      height: 40px;
+      font-size: 12px;
+    }
+  
+    .section {
+      gap: 0.8rem;
+    }
+  
+    .card {
+      height: 220px;
+      width: calc(50% - 10px);
+      padding: 15px;
+      border-radius: 3px;
+    }
+  
+    .card__image {
+      height: 120px;
+    }
+  
+    .card__title {
+      font-size: 22px;
+    }
+  
+    .card__subtitle {
+      font-size: 12px;
+      padding-bottom: 10px;
+    }
+  
+    .card__signature {
+      margin-top: auto;
+    }
+  
+    .footer {
+      padding-top: 60px;
+    }
+  
+    .form {
+      max-width: 420px;
+    }
+  
+    .form__field {
+      width: 300px;
+    }
+  
+    .form__button {
+      width: 100px;
+    }
+  }
+  
+  /* Стили для размера экрана минимум 768px */
+  
+  @media screen and (min-width: 768px) {
+    .top-block {
+      padding: 0 0 160px;
+    }
+  
+    .menu_with-custom-padding {
+      padding: 20px 0 131px;
+    }
+  
+    .navigation__link {
+      margin: 0 30px 0 0;
+    }
+  
+    .top-block__title {
+      font-size: 45px;
+    }
+  
+    .top-block__subtitle {
+      font-size: 18px;
+      margin: 0 0 31px;
+    }
+  
+    .button.top-block__button {
+      width: 200px;
+      height: 50px;
+      font-size: 14px;
+    }
+  
+    .section {
+      gap: 1rem;
+    }
+  
+    .card {
+      height: 240px;
+      width: calc(33.333% - 10px);
+      padding: 20px;
+      border-radius: 3px;
+    }
+  
+    .card__image {
+      height: 150px;
+    }
+  
+    .card__title {
+      font-size: 27px;
+    }
+  
+    .card__subtitle {
+      font-size: 14px;
+      padding-bottom: 15px;
+    }
+  
+    .card__signature {
+      margin-top: auto;
+    }
+  
+    .footer {
+      padding-top: 81px;
+    }
+  
+    .form {
+      max-width: 540px;
+    }
+  
+    .form__field {
+      width: 360px;
+    }
+  }
+  
+  /* Стили для размера экрана минимум 1024px */
+  
+  @media screen and (min-width: 1024px) {
+    .top-block {
+      padding: 0 0 200px;
+    }
+  
+    .menu {
+      justify-content: flex-end;
+    }
+  
+    .navigation {
+      margin: 0 0 0 30px;
+    }
+  
+    .menu_with-custom-padding {
+      padding: 40px 0 161px;
+    }
+  
+    .top-block__title {
+      font-size: 60px;
+    }
+  
+    .top-block__subtitle {
+      font-size: 22px;
+      margin: 0 0 41px;
+    }
+  
+    .button.top-block__button {
+      width: 250px;
+      height: 60px;
+      font-size: 16px;
+    }
+  
+    .section {
+      gap: 1.5rem;
+    }
+  
+    .card {
+      height: 300px;
+      width: calc(25% - 10px);
+      padding: 25px;
+    }
+  
+    .card__image {
+      height: 180px;
+    }
+  
+    .card__title {
+      font-size: 32px;
+    }
+  
+    .card__subtitle {
+      font-size: 16px;
+      padding-bottom: 20px;
+    }
+  
+    .card__signature {
+      margin-top: auto;
+    }
+  
+    .footer {
+      padding-top: 100px;
+    }
+  
+    .form {
+      max-width: 720px;
+    }
+  
+    .form__field {
+      width: 480px;
+    }
+  }
+  
+  /* Стили для размера экрана минимум 1366px */
+  
+  @media screen and (min-width: 1366px) {
+    .container {
+      padding: 0;
+    }
+  
+    .top-block {
+      padding: 0 0 240px;
+    }
+  
+    .menu_with-custom-padding {
+      padding: 60px 0 201px;
+    }
+  
+    .top-block__title {
+      font-size: 80px;
+    }
+  
+    .top-block__subtitle {
+      font-size: 26px;
+      margin: 0 0 61px;
+    }
+  
+    .button.top-block__button {
+      width: 300px;
+      height: 70px;
+      font-size: 20px;
+    }
+  
+    .section {
+      gap: 2rem;
+    }
+  
+    .card {
+      height: 380px;
+      width: calc(20% - 10px);
+      padding: 30px;
+    }
+  
+    .card__image {
+      height: 240px;
+    }
+  
+    .card__title {
+      font-size: 40px;
+    }
+  
+    .card__subtitle {
+      font-size: 20px;
+      padding-bottom: 30px;
+    }
+  
+    .card__signature {
+      margin-top: auto;
+    }
+  
+    .footer {
+      padding-top: 130px;
+    }
+  
+    .form {
+      max-width: 960px;
+    }
+  
+    .form__field {
+      width: 640px;
+    }
+  }
+  
