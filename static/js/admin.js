@@ -158,10 +158,8 @@ form.addEventListener('submit', async (e) => {
     var error = document.getElementById('error-' + pair[0]);
 
     if (!pair[1]) {
-      if (error) {
-        error.classList.remove('block_hidden')
-        inputField.classList.add('post-description__field_error');
-      }
+      error.classList.remove('block_hidden')
+      inputField.classList.add('post-description__field_error');
       hasEmptyFields = true;
     }
 

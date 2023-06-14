@@ -305,10 +305,11 @@
 
 .upload-button
 {
+    width: 80%;
     font: 16px/24px 'Oxygen';
     color: #2E2E2E;
     cursor: pointer;
-    margin-left: 15px;
+    margin: 0 0 0 15px;
 }
 
 .upload-new-button
