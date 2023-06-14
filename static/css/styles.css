@@ -350,3 +350,35 @@
     color: #101315;
     white-space: pre-wrap;
 }
+
+@media screen and (max-width: 1024px){
+  .form {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .form {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 480px){
+    .form {
+      max-width: 440px;
+    }
+
+    .navigation_footer {
+      flex-direction: column;
+    }
+
+    .navigation__link_footer {
+      padding: 0 0 5px 0;
+    }
+
+    .footer__menu {
+      justify-content: space-between;
+      padding: 29px 0 30px 17px;
+    }
+}
+
